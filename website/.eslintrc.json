@@ -7,10 +7,6 @@
       "@typescript-eslint/no-unused-vars": "error",
       "import/named": "error",
       "semi": ["error", "always"],
-      "react/jsx-max-props-per-line": [
-          "error",
-          { "maximum": 1, "when": "multiline" } // This rule limits the number of props per line in JSX elements
-      ],
       "quotes": ["error", "double"]
   }
 }

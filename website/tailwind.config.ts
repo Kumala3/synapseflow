@@ -9,17 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       keyframes: {
-        marquee: {
-          from: { transform: "translateX(0%)"},
-          to: { transform: "translateX(-100%)"}
-        }
+        "infinite-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
       },
       fontFamily: {
-        "tilt": ["Rubik Mono One", "monospace"],
+        tilt: ["Rubik Mono One", "monospace"],
       },
       animation: {
-        marquee: "marquee 5s linear infinite"
-      }
+        "infinite-scroll": "infinite-scroll 10s linear infinite",
+      },
     },
   },
   plugins: [],

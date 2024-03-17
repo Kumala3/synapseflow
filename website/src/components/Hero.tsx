@@ -3,7 +3,7 @@ import Image from "next/image";
 import ArrowButton from "../../public/arrow-button.svg";
 import GradientBg from "../../public/Gradient-BG.svg";
 import HeroImage from "../../public/Image.svg";
-import InfiniteSlider from "./InfiniteSlider/InfiniteSlider";
+import InfiniteSlider from "./infiniteSlider";
 
 export default function Hero() {
     return (

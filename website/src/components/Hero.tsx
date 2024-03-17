@@ -1,6 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import ArrowButton from "../../public/arrow-button.svg";
+import GradientBg from "../../public/Gradient-BG.svg";
+import HeroImage from "../../public/Image.svg";
+import InfiniteSlider from "./InfiniteSlider/InfiniteSlider";
 
 export default function Hero() {
     return (
@@ -32,9 +35,32 @@ export default function Hero() {
                             />
                         </Link>
                     </button>
-
                 </div>
             </div>
+
+            <div className="relative flex h-full justify-center">
+                <Image
+                    src={GradientBg}
+                    alt="gradient-bg"
+                    className="min-h-[500px] object-cover"
+                />
+
+                <div className="absolute flex flex-col w-full items-center pt-1 lg:pt-16">
+                    <Image
+                        src={HeroImage}
+                        alt="hero-image"
+                        className="mr-10 h-[400px] lg:h-[600px]"
+                        priority={true}
+                    />
+
+                    <div className="flex flex-col w-full items-center -mt-16 lg:-mt-[90px]">
+                        <p className="font-tilt font-bold">Trusted by the world&apos;s best companies</p>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <InfiniteSlider />
         </div>
     );
 }

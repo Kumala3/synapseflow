@@ -54,15 +54,16 @@ export default function Hero() {
                     />
 
                     <div className="flex flex-col w-full items-center -mt-16 lg:-mt-[90px]">
-                        <p className="font-tilt font-bold">Trusted by the world&apos;s best companies</p>
-                        
+                        <p className="font-tilt font-bold">
+                            Trusted by the world&apos;s best companies
+                        </p>
                     </div>
                 </div>
-                
             </div>
 
-            <div className="flex -mt-52 lg:-mt-10">
-                    <InfiniteSlider />
+            <div className="flex flex-col lg:-mt-10 overflow-hidden">
+                <InfiniteSlider />
+                <InfiniteSlider side={2} />
             </div>
         </div>
     );

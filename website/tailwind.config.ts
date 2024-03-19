@@ -9,16 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       keyframes: {
-        "infinite-scroll": {
+        "scroll-left": {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(-100%)" },
         },
+        "scroll-right": {
+          from: { transform: "translateX(-100%)"},
+          to: { transform: "translateX(0)"},
+        }
       },
       fontFamily: {
         tilt: ["Rubik Mono One", "monospace"],
       },
       animation: {
-        "infinite-scroll": "infinite-scroll 35s linear infinite",
+        "infinite-scroll-left": "scroll-left 35s linear infinite",
+        "infinite-scroll-right": "scroll-right 35s linear infinite",
       },
     },
   },

@@ -22,8 +22,8 @@ const config: Config = {
         tilt: ["Rubik Mono One", "monospace"],
       },
       animation: {
-        "infinite-scroll-left": "scroll-left 35s linear infinite",
-        "infinite-scroll-right": "scroll-right 35s linear infinite",
+        "infinite-scroll-left": "scroll-left var(--duration-time) linear infinite",
+        "infinite-scroll-right": "scroll-right var(--duration-time) linear infinite",
       },
     },
   },

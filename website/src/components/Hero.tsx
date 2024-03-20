@@ -61,9 +61,9 @@ export default function Hero() {
                 </div>
             </div>
 
-            <div className="flex flex-col lg:-mt-10 overflow-hidden">
-                <InfiniteSlider />
-                <InfiniteSlider side={2} />
+            <div className="flex flex-col overflow-hidden lg:-mt-10">
+                <InfiniteSlider time={60} />
+                <InfiniteSlider side={2} time={60} />
             </div>
         </div>
     );

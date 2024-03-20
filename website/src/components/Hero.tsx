@@ -19,7 +19,7 @@ export default function Hero() {
                     game-changing feature. Boost productivity and efficiency!
                 </p>
 
-                <div className="flex w-full gap-10 pt-4 lg:gap-10">
+                <div className="flex w-full gap-10 pt-4 lg:gap-0 lg:justify-center lg:ml-24 lg:pb-5">
                     <FreeTrialButton />
 
                     <PricingButton />

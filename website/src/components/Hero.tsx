@@ -1,9 +1,9 @@
-import Link from "next/link";
 import Image from "next/image";
-import ArrowButton from "../../public/arrow-button.svg";
 import GradientBg from "../../public/Gradient-BG.svg";
 import HeroImage from "../../public/Image.svg";
 import InfiniteSlider from "./infiniteSlider";
+import { FreeTrialButton } from "./Buttons/freeTrialButton";
+import { PricingButton } from "./Buttons/pricingButton";
 
 export default function Hero() {
     return (
@@ -19,22 +19,10 @@ export default function Hero() {
                     game-changing feature. Boost productivity and efficiency!
                 </p>
 
-                <div className="flex w-full gap-10 pt-4">
-                    <button className="bg-[#3913df] w-1/2 py-4 rounded-md text-white hover:opacity-85 transition-all duration-300 ease-in-out">
-                        Try For Free
-                    </button>
+                <div className="flex w-full gap-10 pt-4 lg:gap-10">
+                    <FreeTrialButton />
 
-                    <button className="flex items-center justify-center gap-x-2 text-[#3612d5] w-1/2 rounded-md font-semibold">
-                        View Pricing
-                        <Link href="/pricing">
-                            <Image
-                                src={ArrowButton}
-                                alt="arrow-button"
-                                width={40}
-                                className="hover:scale-110 hover:opacity-70 transition-all duration-300 ease-in-out"
-                            />
-                        </Link>
-                    </button>
+                    <PricingButton />
                 </div>
             </div>
 
@@ -49,7 +37,7 @@ export default function Hero() {
                     <Image
                         src={HeroImage}
                         alt="hero-image"
-                        className="mr-10 h-[400px] lg:h-[600px]"
+                        className="mr-10 h-[400px] lg:w-[800px] lg:h-[600px]"
                         priority={true}
                     />
 

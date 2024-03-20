@@ -42,7 +42,7 @@ export default function Hero() {
                 <Image
                     src={GradientBg}
                     alt="gradient-bg"
-                    className="min-h-[550px] lg:min-h-[100px] object-cover"
+                    className="min-h-[550px] lg:min-h-[800px] object-cover"
                 />
 
                 <div className="absolute flex flex-col w-full items-center pt-1 lg:pt-16">
@@ -61,9 +61,13 @@ export default function Hero() {
                 </div>
             </div>
 
-            <div className="flex flex-col overflow-hidden lg:-mt-10">
-                <InfiniteSlider time={60} />
-                <InfiniteSlider side={2} time={60} />
+            <div className="flex flex-col">
+                <div className="-mt-52 lg:">
+                    <InfiniteSlider time={60} />
+                </div>
+                <div className="-mt-10">
+                    <InfiniteSlider direction={2} time={60} />
+                </div>
             </div>
         </div>
     );

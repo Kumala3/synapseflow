@@ -42,7 +42,7 @@ export default function Hero() {
                     />
 
                     <div className="flex flex-col w-full items-center -mt-16 lg:-mt-[90px]">
-                        <p className="font-tilt font-bold">
+                        <p className="font-tilt font-bold text-center text-[17px] lg:text-[22px]">
                             Trusted by the world&apos;s best companies
                         </p>
                     </div>

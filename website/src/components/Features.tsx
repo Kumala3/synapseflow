@@ -4,6 +4,7 @@ import Feature3 from "../../public/feature-3.svg";
 import Check from "../../public/check.svg";
 import Image from "next/image";
 import { DetailInfoButton } from "./Buttons/detailInfoButton";
+import Link from "next/link";
 
 const advantagesFeature1 = [
     { advantage: "Track your sales in real-time" },
@@ -38,10 +39,10 @@ export default function Features() {
 
                 <div className="pt-3 max-w-[380px]">
                     <p className="text-center font-semibold ml-11">
-                    Stay on top of things and revamp your work process with our
-                    game-changing feature. Get a bird&apos;s eye view with our
-                    customizable dashboard.
-                </p>
+                        Stay on top of things and revamp your work process with
+                        our game-changing feature. Get a bird&apos;s eye view
+                        with our customizable dashboard.
+                    </p>
                 </div>
 
                 <ul className="flex flex-col items-center pt-5 gap-2">
@@ -100,9 +101,57 @@ export default function Features() {
                         </li>
                     ))}
                 </ul>
-                
+
                 <div className="flex justify-center pt-3">
                     <DetailInfoButton />
+                </div>
+            </div>
+
+            <div className="pt-10">
+                <div className="flex flex-col gap-2 ml-11">
+                    <p className="font-medium text-[#eb2891]">
+                        Growth monitoring
+                    </p>
+                    <h1 className="font-bold">
+                        Monitor your site’s new subscribers{" "}
+                    </h1>
+                </div>
+
+                <div className="flex justify-center pt-5">
+                    <Image
+                        src={Feature3}
+                        alt="feature-3"
+                        className="rounded-md"
+                    />
+                </div>
+
+                <div className="flex max-w-[380px] pt-5 overflow-hidden">
+                    <p className="ml-7 font-medium">
+                        Stay on top of things and revamp your work process with
+                        our game-changing feature. Get a bird&apos;s eye view
+                        with our customizable dashboard.
+                    </p>
+                </div>
+
+                <div className="flex flex-row gap-5 pt-10 ml-11">
+                    <div className="flex flex-col gap-1">
+                        <p className="font-bold">1000+</p>
+                        <p className="font-semibold">
+                            Reviews on{" "}
+                            <Link href={"https://trustpilot.com/"} className="text-[#09be78]">
+                                Trust Pilot
+                            </Link>
+                        </p>
+                    </div>
+
+                    <div className="flex flex-col gap-1">
+                        <p className="font-bold">600+</p>
+                        <p className="font-semibold">Reviews on{" "}
+                            <Link href={"https://trustpilot.com/"} className="text-[#09be78]">
+                                Trust Pilot
+                            </Link>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

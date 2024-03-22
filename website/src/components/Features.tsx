@@ -12,11 +12,18 @@ const advantagesFeature1 = [
     { advantage: "Monitor your sales from anywhere" },
 ];
 
+const advantagesFeature2 = [
+    { advantage: "Easy communication with customers" },
+    { advantage: "Immediately notifications from customers" },
+    { advantage: "Customize your dashboard" },
+    { advantage: "Monitor sales from anywhere" },
+];
+
 export default function Features() {
     return (
         <div className="flex flex-col py-[36px]">
             <div className="flex flex-col">
-                <div className="ml-8">
+                <div className="ml-11">
                     <h3 className="text-[#0085ff] font-semibold ">
                         Sales monitoring
                     </h3>
@@ -25,18 +32,62 @@ export default function Features() {
                     </h1>
                 </div>
 
-                <div className="flex overflow-hidden justify-center">
-                    <Image src={Feature1} alt="feature-1" className="pt-3" />
+                <div className="flex overflow-hidden justify-center pt-3">
+                    <Image src={Feature1} alt="feature-1" className="" />
                 </div>
 
-                <p className="text-center font-semibold pt-3">
+                <div className="pt-3 max-w-[380px]">
+                    <p className="text-center font-semibold ml-11">
                     Stay on top of things and revamp your work process with our
                     game-changing feature. Get a bird&apos;s eye view with our
                     customizable dashboard.
                 </p>
+                </div>
 
-                <ul className="flex flex-col items-center pt-5 gap-1">
+                <ul className="flex flex-col items-center pt-5 gap-2">
                     {advantagesFeature1.map((item, index) => (
+                        <li key={index} className="flex items-center gap-1">
+                            <span>
+                                <Image
+                                    src={Check}
+                                    alt="check-sign-image"
+                                    width={20}
+                                />
+                            </span>
+                            <p className="font-medium">{item.advantage}</p>
+                        </li>
+                    ))}
+                </ul>
+
+                <div className="flex justify-center pt-3">
+                    <DetailInfoButton />
+                </div>
+            </div>
+
+            <div className="flex flex-col pt-16">
+                <div className="flex flex-col ml-11 gap-2">
+                    <p className="text-[#00a424] font-medium">
+                        Customer Support
+                    </p>
+                    <h1 className="font-bold text-[18px]">
+                        Get in touch with your customers
+                    </h1>
+                </div>
+
+                <div className="flex pt-5 justify-center">
+                    <Image src={Feature2} alt="feature-2" />
+                </div>
+
+                <div className="flex pt-5 max-w-[390px] overflow-hidden">
+                    <p className="ml-11 font-medium">
+                        Stay on top of things and revamp your work process with
+                        our game-changing feature. Get a bird&apos;s eye view
+                        with our customizable dashboard.
+                    </p>
+                </div>
+
+                <ul className="flex flex-col items-center pt-10 gap-2 max-w-[400px]">
+                    {advantagesFeature2.map((item, index) => (
                         <li key={index} className="flex items-center gap-1">
                             <span>
                                 <Image

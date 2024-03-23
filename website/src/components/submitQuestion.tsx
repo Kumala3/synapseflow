@@ -31,7 +31,17 @@ export default function SubmitQuestion() {
 
         // Clear errors for that field when the user starts typing
         if (errors[name]) {
-            setErrors(prevErrors => ({ ...prevErrors, [name]: undefined }));
+            setErrors(prevErrors => ({ ...prevErrors, [name]: undefined}));
+        }
+    };
+
+    const handleClear = (name: string) => {
+        // Clear textarea when button clear was clicked
+        setForm(prevForm => ({ ...prevForm, [name]: "" }));
+        
+        // Clear errors for that field when user has clicked on clear button
+        if (errors[name]) {
+            setErrors(prevErrors => ({ ...prevErrors, [name]: undefined}));
         }
     };
 
@@ -58,6 +68,7 @@ export default function SubmitQuestion() {
         if (Object.keys(newErrors).length === 0) {
             // You can submit the form
             console.log("Submitting form:", form);
+            console.log("Submit Question works fine!");
             // Here you would normally make an API call
         }
     };
@@ -76,10 +87,10 @@ export default function SubmitQuestion() {
                 isInvalid={!!errors.email}
                 value={form.email}
                 onChange={handleChange}
-                radius="lg"
+                radius="md"
                 size="md"
                 isRequired={true}
-                isClearable={true}
+                onClear={() => handleClear("email")}
                 className="pt-5"
                 variant="bordered"
             />
@@ -95,7 +106,7 @@ export default function SubmitQuestion() {
                 radius="sm"
                 size="lg"
                 isRequired={true}
-                isClearable={true}
+                onClear={() => handleClear("question")}
                 className="pt-5"
                 variant="bordered"
             />

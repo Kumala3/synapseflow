@@ -7,7 +7,7 @@ import { PricingButton } from "./Buttons/pricingButton";
 
 export default function Hero() {
     return (
-        <div className="pt-4">
+        <div className="pt-4 overflow-hidden">
             <div className="px-[20px]">
                 <h1 className="text-center text-[36px] leading-[40px] font-medium ">
                     Start monitoring your page like a pro👨‍💻
@@ -31,6 +31,7 @@ export default function Hero() {
                     src={GradientBg}
                     alt="gradient-bg"
                     className="min-h-[550px] lg:min-h-[800px] object-cover"
+                    priority={true}
                 />
 
                 <div className="absolute flex flex-col w-full items-center pt-1 lg:pt-16">

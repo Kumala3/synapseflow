@@ -148,7 +148,7 @@ export default function Features() {
             </div>
 
             <div className="lg:flex flex-row gap-[90px] items-center">
-                <div className="lg:flex flex-col items-start px-[80px]">
+                <div className="lg:flex flex-col items-start lg:px-[80px]">
                     <div className="flex flex-col gap-2 ml-8 lg:ml-0">
                         <p className="font-medium text-[#eb2891] text-[20px]">
                             Growth monitoring
@@ -205,7 +205,6 @@ export default function Features() {
                     <div className="flex ml-11 pt-4 lg:ml-6 lg:pt-5">
                         <DetailInfoButton />
                     </div>
-
                 </div>
 
                 <div className="lg:flex">

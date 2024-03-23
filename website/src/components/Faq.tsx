@@ -15,7 +15,7 @@ export default function Faq() {
 
     return (
         <div className="flex flex-col lg:flex-row pt-5 lg:px-[60px] lg:gap-[150px]">
-            <div className="flex flex-col gap-4 px-5 pt-[60px]">
+            <div className="flex flex-col gap-4 px-5 pt-[60px] lg:hidden">
                 <h2 className="font-bold text-[#f362af] text-[18px]">
                     Frequently Asked Question
                 </h2>
@@ -43,11 +43,26 @@ export default function Faq() {
                         </AccordionItem>
                     ))}
                 </Accordion>
+
+                <div className="pt-10 px-5 lg:hidden">
+                    <SubmitQuestion />
+                </div>
             </div>
 
-            <div className="pt-10 px-5">
-                <SubmitQuestion />
+            <div className="hidden lg:flex flex-col gap-4 px-5 pt-[60px]">
+                <h2 className="flex flex-row gap-2 font-bold text-[#f362af] text-[18px]">
+                    Frequently Asked Question <p className="font-bold text-[#20a797dc]">(FAQ)</p>
+                </h2>
+
+                <h1 className="font-bold text-[17px]">
+                    Let&apos;s Clarify some of your questions here!
+                </h1>
+
+                <div className="pt-10 px-5">
+                    <SubmitQuestion />
+                </div>
             </div>
+                
         </div>
     );
 }

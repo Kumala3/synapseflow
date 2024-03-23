@@ -153,6 +153,10 @@ export default function Features() {
                         </p>
                     </div>
                 </div>
+
+                <div className="flex ml-11 pt-4">
+                    <DetailInfoButton />
+                </div>
             </div>
         </div>
     );

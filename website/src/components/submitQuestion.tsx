@@ -38,9 +38,9 @@ export default function SubmitQuestion() {
 
     const handleText = () => {
         return (
-            <p className="flex flex-row gap-1 text-[12px] text-[#1e37d9]">
+            <h4 className="flex flex-row gap-1 text-[12px] text-[#1e37d9]">
                 You have typed <p className="font-semibold">{form.question.length} / 800</p> characters
-            </p>
+            </h4>
         );
     };
 

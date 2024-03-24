@@ -4,21 +4,9 @@ import Feature3 from "../../public/feature-3.svg";
 import Check from "../../public/check.svg";
 import Image from "next/image";
 import { DetailInfoButton } from "./Buttons/detailInfoButton";
+import { advantagesFeature1, advantagesFeature2 } from "@/utils/featuresAdvantages";
 import Link from "next/link";
 
-const advantagesFeature1 = [
-    { advantage: "Track your sales in real-time" },
-    { advantage: "Get insights on your sales performance" },
-    { advantage: "Customize your dashboard" },
-    { advantage: "Monitor your sales from anywhere" },
-];
-
-const advantagesFeature2 = [
-    { advantage: "Easy communication with customers" },
-    { advantage: "Immediately notifications from customers" },
-    { advantage: "Customize your dashboard" },
-    { advantage: "Monitor sales from anywhere" },
-];
 
 export default function Features() {
     return (

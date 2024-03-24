@@ -1,7 +1,7 @@
 import Image from "next/image";
 import GradientBg from "../../public/Gradient-BG.svg";
 import HeroImage from "../../public/Image.svg";
-import InfiniteSlider from "./infiniteSlider";
+import InfiniteSlider from "./InfiniteSlider";
 import { FreeTrialButton } from "./Buttons/freeTrialButton";
 import { PricingButton } from "./Buttons/pricingButton";
 

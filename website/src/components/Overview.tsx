@@ -3,8 +3,8 @@ import GradientBg from "../../public/Gradient-BG.svg";
 import AiBG from "../../public/home-bg.webp";
 import HeroImage from "../../public/Image.svg";
 import InfiniteSlider from "./InfiniteSlider";
-import { FreeTrialButton } from "./Buttons/freeTrialButton";
-import { PricingButton } from "./Buttons/learnMoreButton";
+import { Button } from "@nextui-org/react";
+import Link from "next/link";
 
 export default function Overview() {
     return (
@@ -19,9 +19,23 @@ export default function Overview() {
                     No hassle, just smart solutions.
                 </p>
 
-                <div className="flex w-full gap-10 pt-4 pb-5 lg:gap-0 lg:justify-center lg:ml-0 lg:pb-5">
-                    <FreeTrialButton />
-                    <PricingButton />
+                <div className="flex w-full justify-center gap-10 pt-4 pb-5 lg:gap-[250px] lg:pb-5">
+                    <Link href={"/sa"}>
+                        <Button
+                            size="lg"
+                            variant="shadow"
+                            color="primary"
+                            radius="md"
+                            className="w-full lg:w-auto">
+                            Try AI Now
+                        </Button>
+                    </Link>
+
+                    <Link href="/pricing">
+                        <Button size="lg" variant="shadow" color="primary">
+                            Learn More
+                        </Button>
+                    </Link>
                 </div>
             </div>
 

@@ -27,7 +27,10 @@ export const BusinessAdvantages = [
 
 export const EnterpriseAdvantages = [
     { advantage: "All AI models including beta and exclusive ones" },
-    { advantage: "White-glove support with dedicated account and technical manager" },
+    {
+        advantage:
+            "White-glove support with dedicated account and technical manager",
+    },
     { advantage: "Unlimited projects with advanced AI integration" },
     { advantage: "Unlimited high-priority API access" },
     { advantage: "Custom AI model training with dedicated research team" },
@@ -37,4 +40,28 @@ export const EnterpriseAdvantages = [
     { advantage: "On-site training and workshops" },
     { advantage: "Annual AI and software innovation summit invitation" },
     { advantage: "Exclusive partnership opportunities and co-marketing" },
+];
+
+export const plansConfigs = [
+    {
+        plan: "Free Trial",
+        description: "Perfect for testing our features",
+        cost: 0,
+        advantages: freeTrialAdvantages,
+        buttonText: "Start free trial",
+    },
+    {
+        plan: "Pro",
+        description: "For professional users",
+        cost: 80,
+        advantages: ProAdvantages,
+        buttonText: "Get started",
+    },
+    {
+        plan: "Business",
+        description: "For small/medium businesses",
+        cost: 200,
+        advantages: BusinessAdvantages,
+        buttonText: "Contact Sales",
+    },
 ];

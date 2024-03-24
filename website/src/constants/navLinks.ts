@@ -3,4 +3,5 @@ export const navLinks = [
     { name: "Pricing", to: "/pricing" },
     { name: "Overview", to: "/overview" },
     { name: "Resources", to: "/resources" },
+    { name: "Enterprise", to: "/enterprise" },
 ];

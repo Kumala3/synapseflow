@@ -1,12 +1,11 @@
 import Image from "next/image";
 import GradientBg from "../../public/Gradient-BG.svg";
-import AiBG from "../../public/home-bg.webp";
-import HeroImage from "../../public/Image.svg";
 import InfiniteSlider from "./InfiniteSlider";
 import { Button } from "@nextui-org/react";
+import { ROUTES } from "@/utils/routes";
 import Link from "next/link";
 
-export default function Overview() {
+export default function Introduction() {
     return (
         <div className="pt-4 overflow-hidden">
             <div className="px-[20px]">
@@ -20,7 +19,7 @@ export default function Overview() {
                 </p>
 
                 <div className="flex w-full justify-center gap-10 pt-4 pb-5 lg:gap-[250px] lg:pb-5">
-                    <Link href={"/sa"}>
+                    <Link href={ROUTES.TEST_AI}>
                         <Button
                             size="lg"
                             variant="shadow"
@@ -31,7 +30,7 @@ export default function Overview() {
                         </Button>
                     </Link>
 
-                    <Link href="/pricing">
+                    <Link href={ROUTES.PRICING}>
                         <Button size="lg" variant="shadow" color="primary">
                             Learn More
                         </Button>

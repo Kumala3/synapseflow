@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { linksCompanies } from "@/constants/companies";
 
 interface InfiniteSliderProps {
     time?: number;
@@ -42,7 +41,7 @@ export default function InfiniteSlider({
             <ul
                 style={durationTime as React.CSSProperties}
                 className={`flex items-center [&_img]:max-w-none ${animationStyle}`}>
-                {linksCompanies?.map((item, index) => (
+                {companies?.map((item, index) => (
                     <li key={index} className="inline-block p-6 lg:p-8">
                         <Link href={item.to}>
                             <Image

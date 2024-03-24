@@ -5,7 +5,7 @@ import SlackLogo from "../../public/slack.png";
 import GitKrakenLogo from "../../public/gitkraken.png";
 import MicrosoftLogo from "../../public/microsoft.png";
 import DropBoxLogo from "../../public/dropbox.png";
-import EbayLogo from "../../public/ebay.png";
+import EbayLogo from "../../public/Ebay.png";
 import IntelLogo from "../../public/intel.png";
 import NetflixLogo from "../../public/netflix.png";
 import UbisoftLogo from "../../public/ubisoft.png";

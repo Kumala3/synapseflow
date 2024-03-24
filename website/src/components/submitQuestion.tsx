@@ -125,7 +125,7 @@ export default function SubmitQuestion() {
                 maxLength={800}
             />
 
-            <div className="flex pt-5 justify-center">
+            <div className="flex pt-1 justify-center">
                 <Button
                     variant="shadow"
                     color="primary"

@@ -3,13 +3,7 @@ import Link from "next/link";
 import Logo from "../../public/Logo.svg";
 import UserLogo from "../../public/User.svg";
 import MenuLogo from "../../public/Menu.svg";
-
-const navLinks = [
-    { name: "Features", to: "/features" },
-    { name: "Pricing", to: "/pricing" },
-    { name: "Enterprise", to: "/enterprise" },
-    { name: "Careers", to: "/careers" },
-];
+import { navLinks } from "@/utils/navLinks";
 
 export default function Navbar() {
     return (

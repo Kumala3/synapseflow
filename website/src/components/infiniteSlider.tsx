@@ -1,11 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { StaticImageData } from "next/image";
 
 interface InfiniteSliderProps {
     time?: number;
     direction?: number;
-    companies: {to: string, brand: string, image}[];
+    companies: { to: string; brand: string; image: StaticImageData; }[]; // Explicitly specify the type of the 'image' property as string
 }
 
 export default function InfiniteSlider({

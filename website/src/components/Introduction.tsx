@@ -4,7 +4,7 @@ import InfiniteSlider from "./InfiniteSlider";
 import { Button } from "@nextui-org/react";
 import { ROUTES } from "@/utils/routes";
 import Link from "next/link";
-import { linksCompanies1, linksCompanies2 } from "@/constants/companies";
+import { linksCompanies1 } from "@/constants/companies";
 
 export default function Introduction() {
     return (

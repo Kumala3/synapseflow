@@ -4,6 +4,8 @@ import Logo from "../../public/Logo.svg";
 import UserLogo from "../../public/User.svg";
 import MenuLogo from "../../public/Menu.svg";
 import { navLinks } from "@/constants/navLinks";
+import { Button } from "@nextui-org/react";
+import { ROUTES } from "../utils/routes";
 
 export default function Navbar() {
     return (
@@ -27,10 +29,10 @@ export default function Navbar() {
             <div className="flex gap-5">
                 <div className="flex items-center gap-2.5">
                     <Image src={UserLogo} alt="user-logo" className="xl:w-16"/>
-                    <Link href="/signin">
-                        <span className="hidden font-medium lg:block hover:bg-slate-200 rounded duration-150 xl:text-[22px]">
+                    <Link href={ROUTES.SIGN_IN}>
+                        <Button size="sm" variant="ghost" radius="sm" className="hidden lg:flex lg:hover:rounded-2xl">
                             Sign in
-                        </span>
+                        </Button>
                     </Link>
                 </div>
 

@@ -8,4 +8,7 @@ export const ROUTES = {
     NOT_FOUND: "*",
     FAQ: "/faq",
     TEST_AI: "/test-ai",
+    ABOUT: "/about",
+    CONTACT: "/contact",
+    SIGN_IN: "/sign-in",
 };

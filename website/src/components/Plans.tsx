@@ -11,11 +11,11 @@ export default function Plans() {
             </div>
 
             <div className="flex flex-col gap-10 pt-5 items-center lg:flex-row lg:px-32">
-                <PlanCard plan="free trial" />
+                <PlanCard />
 
-                <PlanCard plan="Pro" />
+                <PlanCard plan="pro" />
 
-                <PlanCard plan="Business" />
+                <PlanCard plan="business" />
             </div>
         </div>
     );

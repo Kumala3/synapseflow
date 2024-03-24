@@ -4,6 +4,7 @@ import InfiniteSlider from "./InfiniteSlider";
 import { Button } from "@nextui-org/react";
 import { ROUTES } from "@/utils/routes";
 import Link from "next/link";
+import { linksCompanies1, linksCompanies2 } from "@/constants/companies";
 
 export default function Introduction() {
     return (
@@ -67,10 +68,10 @@ export default function Introduction() {
 
             <div className="flex flex-col">
                 <div className="-mt-52 lg:">
-                    <InfiniteSlider time={60} />
+                    <InfiniteSlider time={60} companies={linksCompanies1} />
                 </div>
                 <div className="-mt-10">
-                    <InfiniteSlider direction={2} time={60} />
+                    <InfiniteSlider direction={2} time={60} companies={linksCompanies1} />
                 </div>
             </div>
         </div>

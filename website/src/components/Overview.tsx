@@ -47,13 +47,16 @@ export default function Overview() {
                     priority={true}
                 />
 
-                <div className="absolute flex flex-col w-full items-center pt-1 lg:pt-16">
-                    <Image
-                        src={HeroImage}
-                        alt="hero-image"
-                        className="mr-10 h-[400px] lg:w-[800px] lg:h-[600px]"
-                        priority={true}
-                    />
+                <div className="absolute flex flex-col w-full items-center pt-[50px] lg:pt-16">
+                    <div className="pb-[110px] lg:pb-[115px]">
+                        <iframe
+                            className="flex rounded-md w-[350px] h-[250px] lg:w-[900px] lg:h-[500px]"
+                            src="https://www.youtube.com/embed/reUZRyXxUs4"
+                            title="How AI Could Empower Any Business | Andrew Ng | TED"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                        />
+                    </div>
 
                     <div className="flex flex-col w-full items-center -mt-16 lg:-mt-[90px]">
                         <p className="font-tilt font-bold text-center text-[17px] lg:text-[22px] text-white">

@@ -1,7 +1,7 @@
 "use client";
 
 import { Accordion, AccordionItem } from "@nextui-org/react";
-import { faqElements } from "@/utils/faq";
+import { faqElements } from "@/constants/faq";
 import SubmitQuestion from "./SubmitQuestion";
 
 export default function Faq() {

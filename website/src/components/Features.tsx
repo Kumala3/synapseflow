@@ -4,7 +4,7 @@ import Feature3 from "../../public/feature-3.svg";
 import Check from "../../public/check.svg";
 import Image from "next/image";
 import { DetailInfoButton } from "./Buttons/detailInfoButton";
-import { advantagesFeature1, advantagesFeature2 } from "@/utils/featuresAdvantages";
+import { advantagesFeature1, advantagesFeature2 } from "@/constants/featuresAdvantages";
 import Link from "next/link";
 
 

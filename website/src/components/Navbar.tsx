@@ -3,7 +3,7 @@ import Link from "next/link";
 import Logo from "../../public/Logo.svg";
 import UserLogo from "../../public/User.svg";
 import MenuLogo from "../../public/Menu.svg";
-import { navLinks } from "@/utils/navLinks";
+import { navLinks } from "@/constants/navLinks";
 
 export default function Navbar() {
     return (

@@ -4,7 +4,7 @@ import {
     ProAdvantages,
     BusinessAdvantages,
     EnterpriseAdvantages,
-} from "@/utils/plansAdvantages";
+} from "@/constants/plansAdvantages";
 
 export default function Plans() {
     return (

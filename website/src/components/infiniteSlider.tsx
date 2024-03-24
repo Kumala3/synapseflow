@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { linksCompanies } from "@/utils/companies";
+import { linksCompanies } from "@/constants/companies";
 
 interface InfiniteSliderProps {
     time?: number;

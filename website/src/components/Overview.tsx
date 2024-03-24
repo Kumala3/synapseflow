@@ -1,27 +1,26 @@
 import Image from "next/image";
 import GradientBg from "../../public/Gradient-BG.svg";
+import AiBG from "../../public/home-bg.webp";
 import HeroImage from "../../public/Image.svg";
 import InfiniteSlider from "./InfiniteSlider";
 import { FreeTrialButton } from "./Buttons/freeTrialButton";
-import { PricingButton } from "./Buttons/pricingButton";
+import { PricingButton } from "./Buttons/learnMoreButton";
 
-export default function Hero() {
+export default function Overview() {
     return (
         <div className="pt-4 overflow-hidden">
             <div className="px-[20px]">
-                <h1 className="text-center text-[36px] leading-[40px] font-medium ">
-                    Start monitoring your page like a pro👨‍💻
+                <h1 className="text-center text-[36px] leading-[40px] font-medium text-[#148459]">
+                    Empower Your Product with AI👨‍💻
                 </h1>
 
                 <p className="font-bold pt-4 text-center text-[#36485c]">
-                    Get a birds eye view with our customizable dashboard. Stay
-                    on top of things! Revamp your work process with our
-                    game-changing feature. Boost productivity and efficiency!
+                    Seamlessly integrate advanced AI models into your workflow.
+                    No hassle, just smart solutions.
                 </p>
 
-                <div className="flex w-full gap-10 pt-4 lg:gap-0 lg:justify-center lg:ml-24 lg:pb-5">
+                <div className="flex w-full gap-10 pt-4 pb-5 lg:gap-0 lg:justify-center lg:ml-0 lg:pb-5">
                     <FreeTrialButton />
-
                     <PricingButton />
                 </div>
             </div>
@@ -43,7 +42,7 @@ export default function Hero() {
                     />
 
                     <div className="flex flex-col w-full items-center -mt-16 lg:-mt-[90px]">
-                        <p className="font-tilt font-bold text-center text-[17px] lg:text-[22px]">
+                        <p className="font-tilt font-bold text-center text-[17px] lg:text-[22px] text-white">
                             Trusted by the world&apos;s best companies
                         </p>
                     </div>

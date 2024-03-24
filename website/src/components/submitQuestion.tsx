@@ -36,7 +36,7 @@ export default function SubmitQuestion() {
         }
     };
 
-    const handleText = () => {
+    const handleDescription = () => {
         return (
             <h4 className="flex flex-row gap-1 text-[12px] text-[#1e37d9]">
                 You have typed <p className="font-semibold">{form.question.length} / 800</p> characters
@@ -118,10 +118,11 @@ export default function SubmitQuestion() {
                 size="lg"
                 isRequired={true}
                 onClear={() => handleClear("question")}
-                description={handleText()}
+                description={handleDescription()}
                 className="pt-5"
                 variant="bordered"
                 maxRows={4}
+                maxLength={800}
             />
 
             <div className="flex pt-5 justify-center">

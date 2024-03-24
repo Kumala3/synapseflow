@@ -15,6 +15,12 @@ function getPlanConfig(plan: string) {
     return planConfig || plansConfigs[0];
 }
 
+function toTitleCase(str: string) {
+    return str.replace(/\w\S*/g, function (txt) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+}
+
 interface PlanCardProps {
     plan?: string;
     description?: string;
@@ -23,13 +29,7 @@ interface PlanCardProps {
     buttonText?: string;
 }
 
-export function PlanCard({
-    plan = "Free Trial",
-}: // description = "",
-// cost = 0,
-// advantages = [{ advantage: "" }],
-// buttonText = "",
-PlanCardProps) {
+export function PlanCard({ plan = "Free Trial" }: PlanCardProps) {
     // const [planConfig, setPlanConfig] = useState<PlanCardProps>({});
 
     // useEffect(() => {
@@ -41,13 +41,29 @@ PlanCardProps) {
     //     fetchConfig();
     // }, [plan]);
 
-    const {description, buttonText, cost, advantages} = getPlanConfig(plan);
+    let bgPlan = "";
+
+    switch (plan) {
+        case "pro":
+            bgPlan = "bg-[#068c57]";
+            break;
+        case "business":
+            bgPlan = "bg-[#624bee]";
+            break;
+        default:
+            bgPlan = "bg-[#3f3f43]";
+            break;
+    }
+
+    const { description, advantages, cost, buttonText } = getPlanConfig(plan);
 
     return (
-        <div className="bg-[#f5f4ff] rounded-md max-w-[380px] max-h-[900px] p-6">
+        <div className={`${bgPlan} text-white rounded-md max-w-[380px] max-h-[900px] p-6`}>
             <div className="flex flex-col">
-                <h1 className="text-[18px] font-semibold">{plan.toLocaleUpperCase()}</h1>
-                <span className="font-medium text-[#36485c]">
+                <h1 className="text-[18px] font-semibold">
+                    {toTitleCase(plan)}
+                </h1>
+                <span className="font-medium">
                     {description}
                 </span>
             </div>

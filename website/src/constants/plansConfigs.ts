@@ -59,7 +59,7 @@ export const plansConfigs = [
     },
     {
         plan: "Business",
-        description: "For small/medium businesses",
+        description: "For medium and large businesses",
         cost: 200,
         advantages: BusinessAdvantages,
         buttonText: "Contact Sales",

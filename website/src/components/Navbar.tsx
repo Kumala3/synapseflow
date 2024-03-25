@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import CompanyLogo from "../../public/company-logo.png";
-import UserLogo from "../../public/User.svg";
+// import UserLogo from "../../public/User.svg";
 import { MenuLogo } from "./MenuLogo";
 import { useState } from "react";
 import { navLinks } from "@/constants/navLinks";

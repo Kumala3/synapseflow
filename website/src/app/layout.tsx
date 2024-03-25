@@ -2,7 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Providers } from "./providers";
-import Navbar from "@/components/Navbar";
+import CustomNavbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
 
@@ -22,7 +22,7 @@ export default function RootLayout({
         <html lang="en" className="light">
             <body className={inter.className}>
 				<Providers>
-                    <Navbar />
+                    <CustomNavbar />
 					{children}
                     <div className="">
                         <Footer />

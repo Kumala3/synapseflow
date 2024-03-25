@@ -2,8 +2,8 @@ import { PlanCard } from "./PlanCard";
 
 export default function Plans() {
     return (
-        <div className="">
-            <div className="flex flex-col pt-16 items-center">
+        <div className="pb-10">
+            <div className="flex flex-col items-center">
                 <h1 className="font-bold text-[20px] text-[#af26e5]">
                     Choose your plan
                 </h1>

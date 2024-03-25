@@ -1,9 +1,9 @@
-
+import Plans from "@/components/Plans";
 
 export default function Pricing() {
     return (
         <div className="">
-            <h1>Hello from Pricing page!</h1>
+            <Plans />
         </div>
     );
 }

@@ -2,7 +2,7 @@
 
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import { faqElements } from "@/constants/faq";
-import SubmitQuestion from "./SubmitQuestion";
+import SubmitQuestion from "./submitQuestion";
 
 export default function Faq() {
     const itemClasses = {

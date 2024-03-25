@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "../../public/Logo.svg";
+import CompanyLogo from "../../public/company-logo.png";
 import UserLogo from "../../public/User.svg";
 import MenuLogo from "../../public/Menu.svg";
 import { navLinks } from "@/constants/navLinks";
@@ -11,7 +11,7 @@ export default function Navbar() {
     return (
         <nav className="flex w-full items-center justify-between px-[20px] py-[16px] lg:container lg:mx-auto xl:w-full">
             <Link href="/">
-                <Image src={Logo} alt="website-logo" />
+                <Image src={CompanyLogo} alt="website-logo" width={100} className="rounded-lg"/>
             </Link>
 
             <div>

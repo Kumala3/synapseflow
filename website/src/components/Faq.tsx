@@ -47,7 +47,7 @@ export default function Faq() {
                     </Accordion>
                 </div>
 
-                <div className="pt-[100px] px-5 lg:hidden">
+                <div className="pt-[100px] pb-10 px-5 lg:hidden">
                     <SubmitQuestion />
                 </div>
             </div>

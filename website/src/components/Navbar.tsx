@@ -8,6 +8,7 @@ import { useState } from "react";
 import { navLinks } from "@/constants/navLinks";
 import { Button } from "@nextui-org/react";
 import { ROUTES } from "../utils/routes";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 import {
     Navbar,
     NavbarBrand,
@@ -21,9 +22,11 @@ import {
 
 export default function CustomNavbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+    
     return (
-        <Navbar className="pt-1" onMenuOpenChange={setIsMenuOpen}>
+        <Navbar
+            className={"pt-1  dark:bg-[#636368]"}
+            onMenuOpenChange={setIsMenuOpen}>
             <NavbarBrand>
                 <Link href="/">
                     <Image
@@ -39,7 +42,7 @@ export default function CustomNavbar() {
                 {navLinks.map((item, index) => (
                     <NavbarItem key={index}>
                         <Link href={item.to}>
-                            <span className="text-gray-500 font-semibold hover:text-black transition-colors duration-300">
+                            <span className="text-gray-500 font-semibold hover:text-black transition-colors duration-300 dark:text-white dark:hover:text-black">
                                 {item.name}
                             </span>
                         </Link>
@@ -47,7 +50,11 @@ export default function CustomNavbar() {
                 ))}
             </NavbarContent>
 
-            <NavbarContent justify="end">
+            <NavbarContent justify="end" className="gap-1">
+                <NavbarItem>
+                    <ThemeSwitcher />
+                </NavbarItem>
+
                 <NavbarItem>
                     <Link href={ROUTES.SIGN_IN}>
                         <Button

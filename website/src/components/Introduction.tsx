@@ -14,7 +14,7 @@ export default function Introduction() {
                     Empower Your Product with AI👨‍💻
                 </h1>
 
-                <p className="font-bold pt-4 text-center text-[#36485c]">
+                <p className="font-bold pt-4 text-center text-[#36485c] dark:text-white">
                     Seamlessly integrate advanced AI models into your workflow.
                     No hassle, just smart solutions.
                 </p>

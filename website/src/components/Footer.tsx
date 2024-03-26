@@ -10,8 +10,8 @@ import { socialMedia } from "@/constants/socialMedia";
 
 export function Footer() {
     return (
-        <div className="p-10 bg-[#f2f2f2]">
-            <div className="flex flex-col gap-10 lg:flex-row lg:gap-20 lg:justify-center">
+        <div className="p-10 bg-[#f2f2f2] dark:bg-[#636368]">
+            <div className="flex flex-col gap-10 lg:flex-row lg:gap-20 lg:justify-center dark:text-white">
                 <div className="">
                     <h2 className="font-bold text-[18px]">Features</h2>
 
@@ -87,7 +87,7 @@ export function Footer() {
                         </li>
                     ))}
                 </ul>
-                <span className="">© Copyright 2024. SynapseFlow. All rights reserved.</span>
+                <span className="dark:text-white">© Copyright 2024. SynapseFlow. All rights reserved.</span>
             </div>
         </div>
     );

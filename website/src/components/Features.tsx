@@ -7,7 +7,6 @@ import { DetailInfoButton } from "./Buttons/detailInfoButton";
 import { advantagesFeature1, advantagesFeature2 } from "@/constants/featuresAdvantages";
 import Link from "next/link";
 
-
 export default function Features() {
     return (
         <div className="flex flex-col py-[36px] gap-10 lg:py-[70px] lg:gap-[100px]">
@@ -17,7 +16,7 @@ export default function Features() {
                         <h3 className="text-[#0085ff] font-semibold text-[20px]">
                             Sales monitoring
                         </h3>
-                        <h1 className="font-bold pt-2 text-[16px] lg:text-[26px]">
+                        <h1 className="font-bold pt-2 text-[16px] lg:text-[26px] dark:text-white">
                             Simplify your sales monitoring
                         </h1>
                     </div>
@@ -33,7 +32,7 @@ export default function Features() {
                     </div>
 
                     <div className="pt-3 max-w-[360px] lg:max-w-[390px] lg:pt-0">
-                        <p className="text-center text-[#333232] font-semibold ml-6 lg:ml-0">
+                        <p className="text-center text-[#333232] font-semibold ml-6 lg:ml-0 dark:text-fuchsia-500">
                             Stay on top of things and revamp your work process
                             with our game-changing feature. Get a bird&apos;s
                             eye view with our customizable dashboard.
@@ -50,7 +49,7 @@ export default function Features() {
                                         width={20}
                                     />
                                 </span>
-                                <p className="font-semibold text-[#5a1cb1]">
+                                <p className="font-semibold text-[#5a1cb1] dark:text-[#622eff]">
                                     {item.advantage}
                                 </p>
                             </li>
@@ -66,7 +65,7 @@ export default function Features() {
                     <Image
                         src={Feature1}
                         alt="feature-1"
-                        className="hidden lg:flex lg:hover:opacity-50"
+                        className="hidden lg:flex"
                         width={500}
                         priority={true}
                     />
@@ -105,7 +104,7 @@ export default function Features() {
                     </div>
 
                     <div className="flex pt-5 max-w-[360px] lg:pt-0">
-                        <p className="ml-6 text-center font-semibold text-[#333232] lg:ml-0">
+                        <p className="ml-6 text-center font-semibold text-[#333232] lg:ml-0 dark:text-fuchsia-500">
                             Stay on top of things and revamp your work process
                             with our game-changing feature. Get a bird&apos;s
                             eye view with our customizable dashboard.
@@ -122,7 +121,7 @@ export default function Features() {
                                         width={20}
                                     />
                                 </span>
-                                <p className="font-semibold text-[#5a1cb1]">
+                                <p className="font-semibold text-[#5a1cb1] dark:text-[#622eff]">
                                     {item.advantage}
                                 </p>
                             </li>
@@ -157,7 +156,7 @@ export default function Features() {
                     </div>
 
                     <div className="flex max-w-[360px] pt-5 overflow-hidden lg:pt-0">
-                        <p className="ml-6 text-center font-medium text-[#333232] lg:ml-0">
+                        <p className="ml-6 text-center font-medium text-[#333232] lg:ml-0 dark:text-fuchsia-500">
                             Stay on top of things and revamp your work process
                             with our game-changing feature. Get a bird&apos;s
                             eye view with our customizable dashboard.

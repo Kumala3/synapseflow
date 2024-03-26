@@ -16,7 +16,7 @@ export default function Faq() {
     return (
         <div className="flex flex-col overflow-hidden lg:flex-row pt-0 lg:px-[60px] lg:gap-[150px]">
             <div className="flex flex-col gap-4 px-5 pt-[60px] lg:hidden">
-                <h2 className="font-bold text-[#f362af] text-[18px]">
+                <h2 className="font-bold text-[#f362af] text-[18px] dark:text-[#ad2dfc]">
                     Frequently Asked Question
                 </h2>
 
@@ -38,8 +38,9 @@ export default function Faq() {
                             <AccordionItem
                                 key={index}
                                 title={styledTitle(item.title)}
-                                className=" lg:hover:scale-105 transform: ease-in-out duration-200">
-                                <p className="text-[#113c68] font-medium">
+                                className=" lg:hover:scale-105 transform: ease-in-out duration-200"
+                            >
+                                <p className="text-[#6e27d1] font-medium dark:text-fuchsia-500">
                                     {item.content}
                                 </p>
                             </AccordionItem>
@@ -53,7 +54,7 @@ export default function Faq() {
             </div>
 
             <div className="hidden lg:flex flex-col gap-4 px-5 pt-[60px]">
-                <h2 className="flex flex-row gap-1 font-bold text-[#f362af] text-[18px]">
+                <h2 className="flex flex-row gap-1 font-bold text-[#f362af] text-[18px] dark:text-[#a32bee]">
                     Frequently Asked Question{" "}
                     <p className="font-bold text-[#20a797dc]">(FAQ)</p>
                 </h2>

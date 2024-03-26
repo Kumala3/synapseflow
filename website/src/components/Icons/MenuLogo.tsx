@@ -1,5 +1,5 @@
 import Image from "next/image";
-import MenuSVG from "../../public/Menu.svg";
+import MenuSVG from "../../../public/Menu.svg";
 
 export function MenuLogo() {
     return (

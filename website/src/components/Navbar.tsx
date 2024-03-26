@@ -3,7 +3,7 @@
 import Image from "next/image";
 import CompanyLogo from "../../public/company-logo.png";
 // import UserLogo from "../../public/User.svg";
-import { MenuLogo } from "./MenuLogo";
+import { MenuLogo } from "./Icons/MenuLogo";
 import { useState } from "react";
 import { navLinks } from "@/constants/navLinks";
 import { Button } from "@nextui-org/react";
@@ -74,6 +74,15 @@ export default function CustomNavbar() {
                 />
 
                 <NavbarMenu className="pt-5">
+                    <NavbarMenuItem>
+                        <Link
+                            href={ROUTES.SIGN_IN}
+                            size="lg"
+                            className="w-full"
+                            color="success">
+                            Sign in
+                        </Link>
+                    </NavbarMenuItem>
                     {navLinks.map((item, index) => (
                         <NavbarMenuItem key={index}>
                             <Link

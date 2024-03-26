@@ -5,7 +5,7 @@ import ArrowButton from "../../../public/arrow-button.svg";
 export function DetailInfoButton() {
     return (
         <div className="flex flex-row items-center gap-2">
-            <p className="text-[#3612d5] font-medium">Learn More</p>
+            <p className="text-[#3612d5] font-medium dark:text-white">Learn More</p>
             <Link href="/details">
                 <Image
                     src={ArrowButton}

@@ -19,15 +19,13 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className="light">
+        <html lang="en" suppressHydrationWarning>
             <body className={inter.className}>
-				<Providers>
+                <Providers>
                     <CustomNavbar />
-					{children}
-                    <div className="">
-                        <Footer />
-                    </div>
-				</Providers>
+                    {children}
+                    <Footer />
+                </Providers>
             </body>
         </html>
     );

@@ -1,11 +1,11 @@
-import FacebookLogo from "../../public/facebooklogo.svg";
-import LinkedInLogo from "../../public/linkedinlogo.svg";
-import DiscordLogo from "../../public/discordlogo.svg";
-import XLogo from "../../public/xlogo.svg";
+import TwitterIcon from "@/components/Icons/TwitterIcon";
+import FacebookIcon from "@/components/Icons/FacebookIcon";
+import LinkedInIcon from "@/components/Icons/LinkedinLogo";
+import DiscordIcon from "@/components/Icons/DiscordLogo";
 
 export const socialMedia = [
-    { logo: FacebookLogo, url: "https://www.facebook.com"},
-    { logo: LinkedInLogo, url: "https://www.linkedin.com"},
-    { logo: XLogo, url: "https://twitter.com/"},
-    { logo: DiscordLogo, url: "https://www.discord.com"},
+    { icon: <FacebookIcon />, url: "https://www.facebook.com"},
+    { icon: <LinkedInIcon />, url: "https://www.linkedin.com"},
+    { icon: <TwitterIcon />, url: "https://twitter.com/"},
+    { icon: <DiscordIcon />, url: "https://www.discord.com"},
 ];

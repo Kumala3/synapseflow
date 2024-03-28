@@ -2,4 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "../styles/custom-components.css";
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap')
+

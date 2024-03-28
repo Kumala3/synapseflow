@@ -1,0 +1,3 @@
+.social-icon-hover {
+    @apply lg:hover:transform ease-in-out duration-250 lg:hover:scale-125;
+}

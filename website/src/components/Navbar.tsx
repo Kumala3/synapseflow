@@ -3,7 +3,7 @@
 import Image from "next/image";
 import CompanyLogo from "../../public/company-logo.png";
 // import UserLogo from "../../public/User.svg";
-import { MenuLogo } from "./Icons/MenuLogo";
+import { MenuIcon } from "./Icons/MenuIcon";
 import { useState } from "react";
 import { navLinks } from "@/constants/navLinks";
 import { Button } from "@nextui-org/react";
@@ -52,7 +52,7 @@ export default function CustomNavbar() {
             </NavbarContent>
 
             <NavbarContent justify="end" className="gap-1">
-                <div className="flex flex-row gap-3 absolute mr-[90px]">
+                <div className="flex flex-row gap-3 absolute mr-[40px] lg:mr-[90px]">
                     <NavbarItem>
                         <Link href="https://github.com/Kumala3/synapseflow">
                             <GitHubIcon />
@@ -79,7 +79,7 @@ export default function CustomNavbar() {
                 <NavbarMenuToggle
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                     className="flex lg:hidden"
-                    icon={<MenuLogo />}
+                    icon={<MenuIcon />}
                 />
 
                 <NavbarMenu className="pt-5">

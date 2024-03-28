@@ -10,14 +10,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      backgroundColor: { "dark": "#101418" },
       keyframes: {
         "scroll-left": {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(-100%)" },
         },
         "scroll-right": {
-          from: { transform: "translateX(-100%)"},
-          to: { transform: "translateX(0)"},
+          from: { transform: "translateX(-100%)" },
+          to: { transform: "translateX(0)" },
         }
       },
       fontFamily: {

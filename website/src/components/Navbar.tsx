@@ -26,7 +26,7 @@ export default function CustomNavbar() {
 
     return (
         <Navbar
-            className={"pt-1  dark:bg-[#1f1f1f]"}
+            className={"pt-1 dark:bg-[#1f1f1f]"}
             onMenuOpenChange={setIsMenuOpen}>
             <NavbarBrand>
                 <Link href="/">
@@ -43,7 +43,7 @@ export default function CustomNavbar() {
                 {navLinks.map((item, index) => (
                     <NavbarItem key={index}>
                         <Link href={item.to}>
-                            <span className="text-gray-500 font-semibold hover:text-black transition-colors duration-300 dark:text-white dark:hover:text-black">
+                            <span className="text-gray-500 font-semibold hover:text-black hover:font-bold hover:scale-110 transform ease-in-out dark:text-white duration-250">
                                 {item.name}
                             </span>
                         </Link>
@@ -52,7 +52,7 @@ export default function CustomNavbar() {
             </NavbarContent>
 
             <NavbarContent justify="end" className="gap-1">
-                <div className="flex flex-row gap-3 relative">
+                <div className="flex flex-row gap-3 absolute mr-[90px]">
                     <NavbarItem>
                         <Link href="https://github.com/Kumala3/synapseflow">
                             <GitHubIcon />

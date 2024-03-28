@@ -23,6 +23,7 @@ export const ThemeSwitcher = () => {
             checked={isDark}
             color="primary"
             thumbIcon={isDark ? <MoonIcon /> : <SunIcon />}
+            className="theme-transition"
             onChange={toggleTheme}
         />
     );

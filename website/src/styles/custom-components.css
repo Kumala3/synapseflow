@@ -1,3 +1,7 @@
 .social-icon-hover {
     @apply lg:hover:transform ease-in-out duration-250 lg:hover:scale-125;
 }
+
+.theme-transition {
+    @apply transition-colors transition-background duration-1000;
+}

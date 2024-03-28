@@ -11,7 +11,7 @@ export default function TwitterIcon() {
                     alt="Twitter Logo"
                     width={30}
                     height={30}
-                    className=""
+                    className="social-icon-hover"
                 />
             </div>
 
@@ -22,7 +22,7 @@ export default function TwitterIcon() {
                     alt="Twitter White Logo"
                     width={30}
                     height={30}
-                    className=""
+                    className="social-icon-hover"
                 />
             </div>
         </div>

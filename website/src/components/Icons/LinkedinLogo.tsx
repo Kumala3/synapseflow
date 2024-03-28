@@ -11,7 +11,7 @@ export default function LinkedInLogo() {
                     alt="LinkedIn Logo"
                     width={30}
                     height={30}
-                    className=""
+                    className="social-icon-hover"
                 />
             </div>
 
@@ -22,7 +22,7 @@ export default function LinkedInLogo() {
                     alt="LinkedIn White Logo"
                     width={30}
                     height={30}
-                    className=""
+                    className="social-icon-hover"
                 />
             </div>
         </div>

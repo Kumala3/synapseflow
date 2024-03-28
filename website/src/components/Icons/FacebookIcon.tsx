@@ -11,7 +11,7 @@ export default function FacebookIcon() {
                     alt="Facebook Logo"
                     width={30}
                     height={30}
-                    className=""
+                    className="social-icon-hover"
                 />
             </div>
 
@@ -22,7 +22,7 @@ export default function FacebookIcon() {
                     alt="Facebook White Logo"
                     width={30}
                     height={30}
-                    className=""
+                    className="social-icon-hover"
                 />
             </div>
         </div>

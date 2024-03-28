@@ -7,6 +7,7 @@ import { MenuLogo } from "./Icons/MenuLogo";
 import { useState } from "react";
 import { navLinks } from "@/constants/navLinks";
 import { Button } from "@nextui-org/react";
+import GitHubIcon from "./Icons/GitHubIcon";
 import { ROUTES } from "../utils/routes";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import {
@@ -22,10 +23,10 @@ import {
 
 export default function CustomNavbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    
+
     return (
         <Navbar
-            className={"pt-1  dark:bg-[#636368]"}
+            className={"pt-1  dark:bg-[#1f1f1f]"}
             onMenuOpenChange={setIsMenuOpen}>
             <NavbarBrand>
                 <Link href="/">
@@ -38,7 +39,7 @@ export default function CustomNavbar() {
                 </Link>
             </NavbarBrand>
 
-            <NavbarContent className="hidden lg:flex gap-10" justify="center">
+            <NavbarContent className="hidden lg:flex gap-10 mr-[20px]" justify="center">
                 {navLinks.map((item, index) => (
                     <NavbarItem key={index}>
                         <Link href={item.to}>
@@ -51,9 +52,17 @@ export default function CustomNavbar() {
             </NavbarContent>
 
             <NavbarContent justify="end" className="gap-1">
-                <NavbarItem>
-                    <ThemeSwitcher />
-                </NavbarItem>
+                <div className="flex flex-row gap-3 relative">
+                    <NavbarItem>
+                        <Link href="https://github.com/Kumala3/synapseflow">
+                            <GitHubIcon />
+                        </Link>
+                    </NavbarItem>
+
+                    <NavbarItem>
+                        <ThemeSwitcher />
+                    </NavbarItem>
+                </div>
 
                 <NavbarItem>
                     <Link href={ROUTES.SIGN_IN}>

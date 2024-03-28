@@ -38,7 +38,7 @@ export default function Faq() {
                             <AccordionItem
                                 key={index}
                                 title={styledTitle(item.title)}
-                                className=" lg:hover:scale-105 transform: ease-in-out duration-200"
+                                className="lg:hover:scale-105 transform: ease-in-out duration-200"
                             >
                                 <p className="text-[#6e27d1] font-medium dark:text-fuchsia-500">
                                     {item.content}

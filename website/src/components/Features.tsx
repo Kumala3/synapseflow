@@ -4,16 +4,19 @@ import Feature3 from "../../public/feature-3.svg";
 import Check from "../../public/check.svg";
 import Image from "next/image";
 import { DetailInfoButton } from "./Buttons/detailInfoButton";
-import { advantagesFeature1, advantagesFeature2 } from "@/constants/featuresAdvantages";
+import {
+    advantagesFeature1,
+    advantagesFeature2,
+} from "@/constants/featuresAdvantages";
 import Link from "next/link";
 
 export default function Features() {
     return (
         <div className="flex flex-col py-[36px] gap-10 lg:py-[70px] lg:gap-[100px]">
-            <div className="lg:flex items-center flex-row gap-[90px]">
+            <div className="lg:flex items-center flex-row lg:gap-[90px] md:flex md:flex-row md:gap-[50px]">
                 <div className="flex flex-col lg:items-start lg:px-[80px]">
                     <div className="ml-8 lg:ml-0">
-                        <h3 className="text-[#0085ff] font-semibold text-[20px]">
+                        <h3 className="text-[#0085ff] font-semibold text-[20px] lg:text-start">
                             Sales monitoring
                         </h3>
                         <h1 className="font-bold pt-2 text-[16px] lg:text-[26px] dark:text-white">
@@ -21,11 +24,11 @@ export default function Features() {
                         </h1>
                     </div>
 
-                    <div className="flex overflow-hidden justify-center pt-3">
+                    <div className="flex overflow-hidden justify-center pt-3 md:hidden lg:hidden">
                         <Image
                             src={Feature1}
                             alt="feature-1"
-                            className="sm:hidden"
+                            className=""
                             width={360}
                             priority={true}
                         />
@@ -39,7 +42,7 @@ export default function Features() {
                         </p>
                     </div>
 
-                    <ul className="flex flex-col items-center pt-5 gap-2">
+                    <ul className="flex flex-col items-center pt-5 gap-2 lg:ml-0 md:ml-5 ">
                         {advantagesFeature1.map((item, index) => (
                             <li key={index} className="flex items-center gap-1">
                                 <span>
@@ -49,6 +52,7 @@ export default function Features() {
                                         width={20}
                                     />
                                 </span>
+
                                 <p className="font-semibold text-[#5a1cb1] dark:text-[#622eff]">
                                     {item.advantage}
                                 </p>
@@ -61,30 +65,28 @@ export default function Features() {
                     </div>
                 </div>
 
-                <div className="">
-                    <Image
-                        src={Feature1}
-                        alt="feature-1"
-                        className="hidden lg:flex"
-                        width={500}
-                        priority={true}
-                    />
-                </div>
+                <Image
+                    src={Feature1}
+                    alt="feature-1"
+                    className="hidden lg:flex lg:w-[500px] md:flex md:w-[400px] md:mr-5"
+                    width={500}
+                    priority={true}
+                />
             </div>
 
-            <div className="lg:flex flex-row gap-[90px] items-center">
-                <div className="lg:ml-14">
+            <div className="lg:flex flex-row gap-[90px] items-center md:flex md:flex-row md:px-[50px]">
+                <div className="lg:ml-14 hidden lg:w-[500px] lg:flex md:flex md:w-[400px]">
                     <Image
-                        src={Feature1}
+                        src={Feature2}
                         alt="feature-1"
-                        className="hidden lg:flex"
+                        className=""
                         width={500}
                         priority={true}
                     />
                 </div>
 
                 <div className="flex flex-col">
-                    <div className="flex flex-col ml-8 lg:ml-0 gap-2">
+                    <div className="flex flex-col ml-8 gap-2 lg:ml-0">
                         <p className="text-[#00a424] font-medium text-[20px]">
                             Customer Support
                         </p>
@@ -93,13 +95,13 @@ export default function Features() {
                         </h1>
                     </div>
 
-                    <div className="flex pt-3 justify-center">
+                    <div className="flex pt-3 justify-center md:hidden lg:hidden">
                         <Image
                             src={Feature2}
                             alt="feature-2"
                             width={360}
                             priority={true}
-                            className="sm:hidden lg:hover:opacity-50"
+                            className=""
                         />
                     </div>
 
@@ -134,7 +136,7 @@ export default function Features() {
                 </div>
             </div>
 
-            <div className="lg:flex flex-row gap-[90px] items-center">
+            <div className="lg:flex flex-row gap-[90px] items-center md:flex md:gap-[50px]">
                 <div className="lg:flex flex-col items-start lg:px-[80px]">
                     <div className="flex flex-col gap-2 ml-8 lg:ml-0">
                         <p className="font-medium text-[#eb2891] text-[20px]">
@@ -145,11 +147,11 @@ export default function Features() {
                         </h1>
                     </div>
 
-                    <div className="flex justify-center pt-3">
+                    <div className="flex justify-center pt-3 lg:hidden md:hidden">
                         <Image
                             src={Feature3}
                             alt="feature-3"
-                            className="rounded-lg sm:hidden"
+                            className="rounded-lg"
                             width={360}
                             priority={true}
                         />
@@ -194,15 +196,13 @@ export default function Features() {
                     </div>
                 </div>
 
-                <div className="lg:flex">
-                    <Image
-                        src={Feature3}
-                        alt="feature-3"
-                        className="hidden lg:flex rounded-xl"
-                        width={500}
-                        priority={true}
-                    />
-                </div>
+                <Image
+                    src={Feature3}
+                    alt="feature-3"
+                    className="hidden lg:flex lg:w-[500px] rounded-xl md:flex md:w-[400px] md:mr-5"
+                    width={500}
+                    priority={true}
+                />
             </div>
         </div>
     );

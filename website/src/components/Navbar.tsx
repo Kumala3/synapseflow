@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import CompanyLogo from "../../public/company-logo.png";
+import CompanyLogo from "@public/company-logo.png";
 // import UserLogo from "../../public/User.svg";
 import { MenuIcon } from "./Icons/MenuIcon";
 import { useState } from "react";

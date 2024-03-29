@@ -1,5 +1,5 @@
 import Image from "next/image";
-import GradientBg from "../../public/Gradient-BG.svg";
+import GradientBg from "@public/Gradient-BG.svg";
 import InfiniteSlider from "./infiniteSlider";
 import { Button } from "@nextui-org/react";
 import { ROUTES } from "@/utils/routes";

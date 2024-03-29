@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import ArrowButton from "../../../public/arrow-button.svg";
+import ArrowButton from "@public/arrow-button.svg";
 
 export function DetailInfoButton() {
     return (

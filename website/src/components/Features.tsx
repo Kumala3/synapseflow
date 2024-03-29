@@ -1,7 +1,7 @@
-import Feature1 from "../../public/feature-1.svg";
-import Feature2 from "../../public/feature-2.svg";
-import Feature3 from "../../public/feature-3.svg";
-import Check from "../../public/check.svg";
+import Feature1 from "@public/feature-1.svg";
+import Feature2 from "@public/feature-2.svg";
+import Feature3 from "@public/feature-3.svg";
+import Check from "@public/check.svg";
 import Image from "next/image";
 import { DetailInfoButton } from "./Buttons/detailInfoButton";
 import {
@@ -74,8 +74,8 @@ export default function Features() {
                 />
             </div>
 
-            <div className="lg:flex flex-row gap-[90px] items-center md:flex md:flex-row md:px-[50px]">
-                <div className="lg:ml-14 hidden lg:w-[500px] lg:flex md:flex md:w-[400px]">
+            <div className="lg:flex flex-row gap-[90px] items-center md:flex md:flex-row md:gap-[50px]">
+                <div className="hidden lg:ml-14 lg:flex lg:w-[500px] md:flex md:w-[400px] md:ml-5">
                     <Image
                         src={Feature2}
                         alt="feature-1"
@@ -85,7 +85,7 @@ export default function Features() {
                     />
                 </div>
 
-                <div className="flex flex-col">
+                <div className="flex flex-col md:mr-5">
                     <div className="flex flex-col ml-8 gap-2 lg:ml-0">
                         <p className="text-[#00a424] font-medium text-[20px]">
                             Customer Support

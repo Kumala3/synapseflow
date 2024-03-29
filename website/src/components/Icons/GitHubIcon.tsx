@@ -1,6 +1,6 @@
 import Image from "next/image";
-import GitHubLogo from "../../../public/github-mark/github-mark.svg";
-import GitHubWhiteLogo from "../../../public/github-mark/github-mark-white.svg";
+import GitHubLogo from "@public/github-mark/github-mark.svg";
+import GitHubWhiteLogo from "@public/github-mark/github-mark-white.svg";
 
 export default function GitHubIcon() {
     return (

@@ -1,4 +1,4 @@
-import SunLogo from "../../../public/sunlogo.svg";
+import SunLogo from "@public/sunlogo.svg";
 import Image from "next/image";
 
 export default function SunIcon() {

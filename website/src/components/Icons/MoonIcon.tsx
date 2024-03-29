@@ -1,4 +1,4 @@
-import MoonLogo from "../../../public/moonlogo.svg";
+import MoonLogo from "@public/moonlogo.svg";
 import Image from "next/image";
 
 export default function MoonIcon() {

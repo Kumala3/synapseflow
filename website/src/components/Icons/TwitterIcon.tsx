@@ -1,6 +1,6 @@
 import Image from "next/image";
-import TwitterLogo from "../../../public/social/twitter-mark.svg";
-import TwitterWhiteLogo from "../../../public/social/twitter-mark-white.svg";
+import TwitterLogo from "@public/social/twitter-mark.svg";
+import TwitterWhiteLogo from "@public/social/twitter-mark-white.svg";
 
 export default function TwitterIcon() {
     return (

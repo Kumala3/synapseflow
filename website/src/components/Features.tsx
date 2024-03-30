@@ -1,6 +1,6 @@
-import Feature1 from "@public/feature-1.svg";
-import Feature2 from "@public/feature-2.svg";
-import Feature3 from "@public/feature-3.svg";
+import AiInsights from "@public/ai-powered-insights.webp";
+import CustomerExperience from "@public/customer-experience.webp";
+import MarketExpansion from "@public/market-expansion.webp";
 import Image from "next/image";
 import { DetailInfoButton } from "./Buttons/detailInfoButton";
 import {
@@ -25,8 +25,8 @@ export default function Features() {
 
                     <div className="flex overflow-hidden justify-center pt-3 md:hidden lg:hidden">
                         <Image
-                            src={Feature1}
-                            alt="feature-1"
+                            src={AiInsights}
+                            alt="ai-powered-insights"
                             className=""
                             width={360}
                             priority={true}
@@ -58,9 +58,9 @@ export default function Features() {
                 </div>
 
                 <Image
-                    src={Feature1}
-                    alt="feature-1"
-                    className="hidden lg:flex lg:w-[500px] md:flex md:w-[400px] md:mr-5"
+                    src={AiInsights}
+                    alt="ai-powered-insights"
+                    className="hidden lg:flex lg:w-[500px] md:flex md:w-[400px] md:mr-5 rounded-md"
                     width={500}
                     priority={true}
                 />
@@ -69,9 +69,9 @@ export default function Features() {
             <div className="lg:flex flex-row gap-[90px] items-center md:flex md:flex-row md:gap-[50px]">
                 <div className="hidden lg:ml-16 lg:flex lg:w-[500px] md:flex md:w-[400px] md:ml-5">
                     <Image
-                        src={Feature2}
-                        alt="feature-1"
-                        className=""
+                        src={CustomerExperience}
+                        alt="customer-experience"
+                        className="rounded-md"
                         width={500}
                         priority={true}
                     />
@@ -89,8 +89,8 @@ export default function Features() {
 
                     <div className="flex pt-3 justify-center md:hidden lg:hidden">
                         <Image
-                            src={Feature2}
-                            alt="feature-2"
+                            src={CustomerExperience}
+                            alt="customer-experience"
                             width={360}
                             priority={true}
                             className=""
@@ -135,8 +135,8 @@ export default function Features() {
 
                     <div className="flex justify-center pt-3 lg:hidden md:hidden">
                         <Image
-                            src={Feature3}
-                            alt="feature-3"
+                            src={MarketExpansion}
+                            alt="market-expansion"
                             className="rounded-lg"
                             width={360}
                             priority={true}
@@ -168,8 +168,8 @@ export default function Features() {
                 </div>
 
                 <Image
-                    src={Feature3}
-                    alt="feature-3"
+                    src={MarketExpansion}
+                    alt="market-expansion"
                     className="hidden lg:flex lg:w-[500px] rounded-xl md:flex md:w-[400px] md:mr-5"
                     width={500}
                     priority={true}

@@ -1,5 +1,3 @@
-import Check from "@public/check.svg";
-import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@nextui-org/react";
 import { ROUTES } from "../utils/routes";
@@ -73,7 +71,6 @@ export function PlanCard({ plan = "Free Trial" }: PlanCardProps) {
             <ul className="flex flex-col pt-2 gap-1">
                 {advantages?.map((item, index) => (
                     <li key={index} className="flex gap-1">
-                        <Image src={Check} alt="Check" width={20} />
                         <span className="font-medium">{item.advantage}</span>
                     </li>
                 ))}

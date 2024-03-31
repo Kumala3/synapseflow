@@ -1,8 +1,8 @@
 "use client";
 
 import { Accordion, AccordionItem } from "@nextui-org/react";
-import { faqElements } from "@/constants/faq";
 import SubmitQuestion from "./submitQuestion";
+import { useFaqAnswers } from "@/hooks/useFaqAnswers";
 
 export default function Faq() {
     const itemClasses = {
@@ -12,6 +12,14 @@ export default function Faq() {
     const styledTitle = (title: string) => (
         <p className="font-semibold">{title}</p>
     );
+
+    const { faqData, isLoading, isError } = useFaqAnswers();
+
+    if (isLoading) return <div>Loading...</div>;
+
+    if (isError) return <div>Error...</div>;
+
+    const faqAnswers = faqData?.answers;
 
     return (
         <div className="flex flex-col overflow-hidden lg:flex-row pt-0 lg:px-[60px] lg:gap-[150px]">
@@ -34,12 +42,11 @@ export default function Faq() {
                         selectionMode="single"
                         fullWidth={true}
                         selectionBehavior="toggle">
-                        {faqElements.map((item, index) => (
+                        {(faqAnswers ?? []).map((item, index) => (
                             <AccordionItem
                                 key={index}
                                 title={styledTitle(item.title)}
-                                className="lg:hover:scale-105 transform: ease-in-out duration-200"
-                            >
+                                className="lg:hover:scale-105 transform: ease-in-out duration-200">
                                 <p className="text-[#6e27d1] font-medium dark:text-fuchsia-500">
                                     {item.content}
                                 </p>

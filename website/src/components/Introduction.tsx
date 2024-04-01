@@ -1,12 +1,25 @@
+"use client";
+
 import Image from "next/image";
 import GradientBg from "@public/Gradient-BG.svg";
 import InfiniteSlider from "./infiniteSlider";
 import { Button } from "@nextui-org/react";
 import { ROUTES } from "@/utils/routes";
 import Link from "next/link";
-import { linksCompanies1 } from "@/constants/companies";
+import { usePartnerCompanies } from "@/hooks/usePartnerCompanies";
+import LoadingData from "./LoadingData";
 
 export default function Introduction() {
+    const { partnerCompanies, isError, isLoading } = usePartnerCompanies();
+
+    if (isLoading) return <LoadingData />;
+
+    if (isError) return <div>Failed to load data about partner_companies</div>;
+
+    const partner_companies = partnerCompanies?.partner_companies;
+
+    console.log(partnerCompanies);
+
     return (
         <div className="pt-4 overflow-hidden">
             <div className="px-[20px]">
@@ -68,11 +81,11 @@ export default function Introduction() {
 
             <div className="flex flex-col">
                 <div className="-mt-52 lg:">
-                    <InfiniteSlider time={60} companies={linksCompanies1} />
+                    <InfiniteSlider time={60} companies={partner_companies || []} />
                 </div>
 
                 <div className="-mt-10">
-                    <InfiniteSlider direction={2} time={60} companies={linksCompanies1} />
+                    <InfiniteSlider direction={2} time={60} companies={partner_companies || []} />
                 </div>
             </div>
         </div>

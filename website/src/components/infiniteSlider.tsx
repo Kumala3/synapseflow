@@ -1,12 +1,15 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { StaticImageData } from "next/image";
 
 interface InfiniteSliderProps {
     time?: number;
     direction?: number;
-    companies: { to: string; brand: string; image: StaticImageData; }[]; // Explicitly specify the type of the 'image' property as string
+    companies: {
+        company_website: string;
+        company_name: string;
+        company_logo: string;
+    }[];
 }
 
 export default function InfiniteSlider({
@@ -27,11 +30,12 @@ export default function InfiniteSlider({
                 className={`flex items-center [&_img]:max-w-none ${animationStyle}`}>
                 {companies.map((item, index) => (
                     <li key={index} className="inline-block p-6 lg:p-8">
-                        <Link href={item.to}>
+                        <Link href={item.company_website}>
                             <Image
-                                src={item.image}
-                                alt={`logo-${item.brand.toLowerCase()}`}
+                                src={item.company_logo}
+                                alt={`logo-${item.company_name.toLowerCase()}`}
                                 width={130}
+                                height={130}
                                 className="lg:hover:scale-[115%] transition-all duration-300 ease-in-out"
                             />
                         </Link>
@@ -42,13 +46,14 @@ export default function InfiniteSlider({
             <ul
                 style={durationTime as React.CSSProperties}
                 className={`flex items-center [&_img]:max-w-none ${animationStyle}`}>
-                {companies?.map((item, index) => (
+                {companies.map((item, index) => (
                     <li key={index} className="inline-block p-6 lg:p-8">
-                        <Link href={item.to}>
+                        <Link href={item.company_website}>
                             <Image
-                                src={item.image}
-                                alt={`logo-${item.brand.toLowerCase()}`}
+                                src={item.company_logo}
+                                alt={`logo-${item.company_name.toLowerCase()}`}
                                 width={130}
+                                height={130}
                                 className="lg:hover:scale-[115%] transition-all duration-300 ease-in-out"
                             />
                         </Link>

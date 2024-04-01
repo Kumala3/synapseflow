@@ -24,7 +24,7 @@ export default function InfiniteSlider({
             : "animate-infinite-scroll-right";
 
     return (
-        <div className="relative lg:max-w-[600px] max-w-[1000px] md:max-w-[650px] overflow-hidden h-[130px] mx-auto flex flex-nowrap [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+        <div className="relative lg:max-w-[900px] max-w-[1000px] md:max-w-[650px] overflow-hidden h-[110px] mx-auto flex flex-nowrap [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
             <ul
                 style={durationTime as React.CSSProperties}
                 className={`flex items-center [&_img]:max-w-none ${animationStyle}`}>

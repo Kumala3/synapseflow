@@ -3,7 +3,7 @@
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import SubmitQuestion from "./submitQuestion";
 import { useFaqAnswers } from "@/hooks/useFaqAnswers";
-import LoadingData from "./LoadingData";
+import { LoadingData } from "./LoadingData";
 
 export default function Faq() {
     const itemClasses = {

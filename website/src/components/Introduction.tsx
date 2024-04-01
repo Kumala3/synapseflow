@@ -47,7 +47,7 @@ export default function Introduction() {
                     priority={true}
                 />
 
-                <div className="absolute flex flex-col w-full items-center pt-[50px] lg:pt-16">
+                <div className="absolute flex flex-col w-full items-center pt-[50px] lg:pt-10">
                     <div className="pb-[110px] lg:pb-[115px]">
                         <iframe
                             className="flex rounded-md w-[350px] h-[250px] lg:w-[900px] lg:h-[500px]"
@@ -58,8 +58,8 @@ export default function Introduction() {
                         />
                     </div>
 
-                    <div className="flex flex-col w-full items-center -mt-[70px] lg:-mt-[103px]">
-                        <p className="font-tilt font-bold text-center text-[17px] lg:text-[22px] text-white">
+                    <div className="flex flex-col w-full items-center -mt-[100px] lg:-mt-[103px]">
+                        <p className="font-tilt font-bold text-center text-[19px] lg:text-[24px] text-white">
                             Trusted by the world&apos;s best companies
                         </p>
                     </div>

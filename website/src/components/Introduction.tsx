@@ -58,7 +58,7 @@ export default function Introduction() {
                         />
                     </div>
 
-                    <div className="flex flex-col w-full items-center -mt-16 lg:-mt-[90px]">
+                    <div className="flex flex-col w-full items-center -mt-[70px] lg:-mt-[103px]">
                         <p className="font-tilt font-bold text-center text-[17px] lg:text-[22px] text-white">
                             Trusted by the world&apos;s best companies
                         </p>
@@ -70,6 +70,7 @@ export default function Introduction() {
                 <div className="-mt-52 lg:">
                     <InfiniteSlider time={60} companies={linksCompanies1} />
                 </div>
+
                 <div className="-mt-10">
                     <InfiniteSlider direction={2} time={60} companies={linksCompanies1} />
                 </div>

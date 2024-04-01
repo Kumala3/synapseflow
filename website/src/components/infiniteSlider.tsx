@@ -31,8 +31,8 @@ export default function InfiniteSlider({
                             <Image
                                 src={item.image}
                                 alt={`logo-${item.brand.toLowerCase()}`}
-                                width={110}
-                                className="lg:hover:scale-125 transition-all duration-300 ease-in-out"
+                                width={130}
+                                className="lg:hover:scale-[115%] transition-all duration-300 ease-in-out"
                             />
                         </Link>
                     </li>
@@ -48,8 +48,8 @@ export default function InfiniteSlider({
                             <Image
                                 src={item.image}
                                 alt={`logo-${item.brand.toLowerCase()}`}
-                                width={110}
-                                className="lg:hover:scale-125 transition-all duration-300 ease-in-out"
+                                width={130}
+                                className="lg:hover:scale-[115%] transition-all duration-300 ease-in-out"
                             />
                         </Link>
                     </li>

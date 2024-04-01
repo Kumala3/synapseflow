@@ -1,7 +1,7 @@
 "use client";
 import InfiniteSlider from "./infiniteSlider";
 import { usePartnerCompanies } from "@/hooks/usePartnerCompanies";
-import { PartnersSkeleton } from "./PartnersSkeleton";
+import { SlidersSkeleton } from "./Skeletons/SlidersSkeleton";
 
 export default function Partners() {
     const { partnerCompanies, isError, isLoading } = usePartnerCompanies();
@@ -14,7 +14,7 @@ export default function Partners() {
         <div className="flex flex-col">
             {isLoading ? (
                 <div className="-mt-40">
-                    <PartnersSkeleton />
+                    <SlidersSkeleton />
                 </div>
             ) : (
                 <div className="-mt-[220px] gap-0">

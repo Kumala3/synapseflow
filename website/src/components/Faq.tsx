@@ -3,6 +3,7 @@
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import SubmitQuestion from "./submitQuestion";
 import { useFaqAnswers } from "@/hooks/useFaqAnswers";
+import LoadingData from "./LoadingData";
 
 export default function Faq() {
     const itemClasses = {
@@ -15,7 +16,7 @@ export default function Faq() {
 
     const { faqData, isLoading, isError } = useFaqAnswers();
 
-    if (isLoading) return <div>Loading...</div>;
+    if (isLoading) return <LoadingData />;
 
     if (isError) return <div>Error...</div>;
 
@@ -24,7 +25,7 @@ export default function Faq() {
     return (
         <div className="flex flex-col overflow-hidden lg:flex-row pt-0 lg:px-[60px] lg:gap-[150px]">
             <div className="flex flex-col gap-4 px-5 pt-[60px] lg:hidden">
-                <h2 className="font-bold text-[#f362af] text-[18px] dark:text-[#ad2dfc]">
+                <h2 className="font-bold text-[rgb(243,98,175)] text-[18px] dark:text-[#ad2dfc]">
                     Frequently Asked Question
                 </h2>
 

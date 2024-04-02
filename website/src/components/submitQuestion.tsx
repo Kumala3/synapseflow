@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { Input } from "@nextui-org/react";
-import { Textarea } from "@nextui-org/react";
-import { Button } from "@nextui-org/react";
+import { Input, Textarea } from "@nextui-org/react";
+import { SubmissionConfirmationPopup } from "./SubmissionConfirmationPopup";
 
 interface FormState {
     email: string;
@@ -19,6 +18,7 @@ interface FormErrors {
 export default function SubmitQuestion() {
     const [form, setForm] = useState<FormState>({ email: "", question: "" });
     const [errors, setErrors] = useState<FormErrors>({});
+    const [isSuccess, setIsSuccess] = useState(false);
 
     const validateEmail = (email: string) => {
         // Check if the email is valid
@@ -78,8 +78,7 @@ export default function SubmitQuestion() {
         // Check if errors object is empty
         if (Object.keys(newErrors).length === 0) {
             // You can submit the form
-            console.log("Submitting form:", form);
-            console.log("Submit Question component works perfectly!");
+            setIsSuccess(true);
             // Here you would normally make an API call
         }
     };
@@ -126,15 +125,7 @@ export default function SubmitQuestion() {
             />
 
             <div className="flex pt-1 justify-center">
-                <Button
-                    variant="shadow"
-                    color="primary"
-                    radius="full"
-                    size="md"
-                    onClick={handleSubmit}
-                    className="">
-                    Submit
-                </Button>
+                <SubmissionConfirmationPopup handleSubmit={handleSubmit} isSuccess={isSuccess} />
             </div>
         </div>
     );

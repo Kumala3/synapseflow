@@ -77,8 +77,13 @@ export default function SubmitQuestion() {
 
         // Check if errors object is empty
         if (Object.keys(newErrors).length === 0) {
-            // You can submit the form
+            setForm({ email: "", question: "" });
+
             setIsSuccess(true);
+
+            setTimeout(() => {
+                setIsSuccess(false);
+            }, 5500);
             // Here you would normally make an API call
         }
     };

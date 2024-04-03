@@ -1,4 +1,9 @@
-import { Popover, PopoverContent, Button } from "@nextui-org/react";
+import {
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+    Button,
+} from "@nextui-org/react";
 
 interface SubmissionConfirmationPopupProps {
     isSuccess: boolean;
@@ -10,31 +15,36 @@ export function SubmissionConfirmationPopup({
     handleSubmit,
 }: SubmissionConfirmationPopupProps) {
     return (
-        <>
-            <Button
-                variant="shadow"
-                color="primary"
-                radius="full"
-                size="md"
-                onClick={handleSubmit}
-                className="">
-                Submit
-            </Button>
+        <Popover
+            showArrow
+            offset={10}
+            size="md"
+            placement="bottom"
+            className="max-w-[100%]"
+            isOpen={isSuccess}>
+            <PopoverTrigger>
+                <Button
+                    variant="shadow"
+                    color="primary"
+                    radius="full"
+                    size="md"
+                    onClick={handleSubmit}
+                    className="">
+                    Submit
+                </Button>
+            </PopoverTrigger>
 
-            {isSuccess && (
-                <Popover showArrow placement="bottom">
-                    <PopoverContent>
-                        <div className="px-1 py-2">
-                            <div className="text-small font-bold">
-                                Popover Content
-                            </div>
-                            <div className="text-tiny">
-                                This is the popover content
-                            </div>
-                        </div>
-                    </PopoverContent>
-                </Popover>
-            )}
-        </>
+            <PopoverContent className="">
+                <div className="p-2">
+                    <div className=" font-bold">
+                        Thank you!<br />
+                        Your question has been received and is
+                        under review.<br />
+                        We&apos;ll get back to you with an answer
+                        soon.
+                    </div>
+                </div>
+            </PopoverContent>
+        </Popover>
     );
 }

@@ -6,12 +6,12 @@ import {
 } from "@nextui-org/react";
 
 interface SubmissionConfirmationPopupProps {
-    isSuccess: boolean;
+    showPopup: boolean;
     handleSubmit: () => void;
 }
 
 export function SubmissionConfirmationPopup({
-    isSuccess,
+    showPopup,
     handleSubmit,
 }: SubmissionConfirmationPopupProps) {
     return (
@@ -21,7 +21,7 @@ export function SubmissionConfirmationPopup({
             size="md"
             placement="bottom"
             className="max-w-[100%]"
-            isOpen={isSuccess}>
+            isOpen={showPopup}>
             <PopoverTrigger>
                 <Button
                     variant="shadow"

@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { useState } from "react";
 
 interface FaqQuestionProps {
@@ -7,7 +7,7 @@ interface FaqQuestionProps {
 }
 
 export function useFaqQuestion() {
-    const [error, setError] = useState(null);
+    const [error, setError] = useState<AxiosError | null >(null);
     const [isLoading, setLoading] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
 
@@ -22,7 +22,11 @@ export function useFaqQuestion() {
             setIsSuccess(response.status === 201);
             setError(null); // Reset any errors from previous requests
         } catch (error) {
-            setError(error);
+            if (axios.isAxiosError(error)) {
+                setError(error);
+            } else {
+                console.log(`Unexpected error: ${error}`);
+            }
             setIsSuccess(false);
         } finally {
             setLoading(false);

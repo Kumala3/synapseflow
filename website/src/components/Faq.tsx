@@ -3,7 +3,6 @@
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import SubmitQuestion from "./submitQuestion";
 import { useFaqAnswers } from "@/hooks/useFaqAnswers";
-import { LoadingData } from "./LoadingData";
 
 export default function Faq() {
     const itemClasses = {
@@ -14,9 +13,7 @@ export default function Faq() {
         <p className="font-semibold">{title}</p>
     );
 
-    const { faqData, isLoading, isError } = useFaqAnswers();
-
-    if (isLoading) return <LoadingData />;
+    const { faqData, isError } = useFaqAnswers();
 
     if (isError) return <div>Error...</div>;
 

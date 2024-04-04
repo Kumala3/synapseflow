@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Input, Textarea } from "@nextui-org/react";
 import { SubmissionConfirmationPopup } from "./SubmissionConfirmationPopup";
+import { useFaqQuestion } from "@/hooks/useFaqQuestion";
 
 interface FormState {
     email: string;
@@ -18,7 +19,22 @@ interface FormErrors {
 export default function SubmitQuestion() {
     const [form, setForm] = useState<FormState>({ email: "", question: "" });
     const [errors, setErrors] = useState<FormErrors>({});
-    const [isSuccess, setIsSuccess] = useState(false);
+    const [showPopup, setShowPopup] = useState(false);
+
+    const { sendFaqQuestion, isSuccess, error } = useFaqQuestion();
+
+    useEffect(() => {
+        if (isSuccess) {
+            setShowPopup(true);
+            setForm({ email: "", question: "" });
+        }
+
+        setTimeout(() => {
+            setShowPopup(false);
+        }, 5500);
+    }, [isSuccess]);
+
+    if (error) <div>There was an error during sending a post request</div>;
 
     const validateEmail = (email: string) => {
         // Check if the email is valid
@@ -39,7 +55,9 @@ export default function SubmitQuestion() {
     const handleDescription = () => {
         return (
             <h4 className="flex flex-row gap-1 text-[12px] text-[#1e37d9] dark:text-[#a32bee]">
-                You have typed <p className="font-semibold">{form.question.length} / 800</p> characters
+                You have typed{" "}
+                <p className="font-semibold">{form.question.length} / 800</p>{" "}
+                characters
             </h4>
         );
     };
@@ -54,7 +72,7 @@ export default function SubmitQuestion() {
         }
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         let newErrors: FormErrors = {};
 
         // Validate entered email
@@ -77,14 +95,10 @@ export default function SubmitQuestion() {
 
         // Check if errors object is empty
         if (Object.keys(newErrors).length === 0) {
-            setForm({ email: "", question: "" });
-
-            setIsSuccess(true);
-
-            setTimeout(() => {
-                setIsSuccess(false);
-            }, 5500);
-            // Here you would normally make an API call
+            await sendFaqQuestion({
+                email: form.email,
+                question: form.question,
+            });
         }
     };
 
@@ -130,7 +144,10 @@ export default function SubmitQuestion() {
             />
 
             <div className="flex pt-1 justify-center">
-                <SubmissionConfirmationPopup handleSubmit={handleSubmit} isSuccess={isSuccess} />
+                <SubmissionConfirmationPopup
+                    handleSubmit={handleSubmit}
+                    showPopup={showPopup}
+                />
             </div>
         </div>
     );

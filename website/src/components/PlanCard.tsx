@@ -30,10 +30,18 @@ export function PlanCard({ plan_name = "Hobby" }: PlanCardProps) {
 
     useEffect(() => {
         if (pricingPlans) {
-            const foundPlan = pricingPlans?.find(
+            const foundPlan = pricingPlans.find(
                 p => p.plan.toLowerCase() === plan_name.toLowerCase()
             );
-            setPlan(foundPlan || pricingPlans[0]); // Fallback to the first plan if not found or an empty object if pricingPlans is empty
+            setPlan(
+                foundPlan as {
+                    plan: "";
+                    description: "";
+                    cost: 0;
+                    button_text: "";
+                    advantages: [{ advantage: "" }];
+                }
+            );
         }
     }, [pricingPlans, plan_name]);
 

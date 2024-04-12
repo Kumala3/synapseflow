@@ -1,10 +1,6 @@
 import axios, { AxiosError } from "axios";
 import { useState } from "react";
-
-interface FaqQuestionProps {
-    email: string;
-    question: string;
-}
+import { FaqQuestionProps } from "@/types/FaqQuestion";
 
 export function useFaqQuestion() {
     const [error, setError] = useState<AxiosError | null >(null);

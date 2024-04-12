@@ -1,15 +1,6 @@
 import useSWR from "swr";
 import axios from "axios";
-
-interface PartnerCompany {
-    company_name: string;
-    company_logo: string;
-    company_website: string;
-}
-
-interface PartnerCompaniesResponse {
-    partner_companies: PartnerCompany[];
-}
+import { PartnerCompaniesResponse } from "@/types/PartnerCompanies";
 
 export function usePartnerCompanies() {
     const fetcher = async (url: string) => {

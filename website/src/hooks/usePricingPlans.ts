@@ -1,13 +1,6 @@
 import useSWR from "swr";
 import axios from "axios";
-
-interface PricingPlan {
-    plan: string;
-    description: string;
-    cost: number;
-    button_text: string;
-    advantages?: { advantage: string }[];
-}
+import { PricingPlan } from "@/types/PricingPlan";
 
 export function usePricingPlans() {
     const fetcher = async (url: string) => {

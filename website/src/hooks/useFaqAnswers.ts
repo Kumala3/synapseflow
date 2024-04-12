@@ -1,14 +1,6 @@
 import useSWR from "swr";
 import axios from "axios";
-
-interface FaqAnswer {
-    title: string;
-    content: string;
-}
-
-interface FaqResponse {
-    answers: FaqAnswer[];
-}
+import { FaqResponse } from "@/types/FaqAnswers";
 
 export function useFaqAnswers() {
     const fetcher = async (url: string) => {

@@ -1,17 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@nextui-org/react";
 import { ROUTES } from "../utils/routes";
-import { plansConfigs } from "@/constants/plansConfigs";
-
-function getPlanConfig(plan: string) {
-    // TODO: Fetch the plan config from the api
-    // Getting the plan config from the planName
-    const planConfig = plansConfigs.find(
-        config => config.plan?.toLowerCase() === plan
-    );
-
-    return planConfig || plansConfigs[0];
-}
+import { useEffect, useState } from "react";
+import { usePricingPlans } from "@/hooks/usePricingPlans";
+import { LoadingData } from "./LoadingData";
 
 function toTitleCase(str: string) {
     return str.replace(/\w\S*/g, function (txt) {
@@ -20,28 +14,44 @@ function toTitleCase(str: string) {
 }
 
 interface PlanCardProps {
-    plan?: string;
-    description?: string;
-    advantages?: { advantage: string }[];
-    cost?: number;
-    buttonText?: string;
+    plan_name?: string;
 }
 
-export function PlanCard({ plan = "Free Trial" }: PlanCardProps) {
-    // const [planConfig, setPlanConfig] = useState<PlanCardProps>({});
+export function PlanCard({ plan_name = "Hobby" }: PlanCardProps) {
+    const { pricingPlans, isError, isLoading } = usePricingPlans();
 
-    // useEffect(() => {
-    //     const fetchConfig = async () => {
-    //         const configData = await getPlanConfig(plan);
-    //         setPlanConfig(configData);
-    //     };
+    const [plan, setPlan] = useState({
+        plan: "",
+        description: "",
+        cost: 0,
+        button_text: "",
+        advantages: [{ advantage: "" }],
+    });
 
-    //     fetchConfig();
-    // }, [plan]);
+    useEffect(() => {
+        if (pricingPlans) {
+            const foundPlan = pricingPlans.find(
+                p => p.plan.toLowerCase() === plan_name.toLowerCase()
+            );
+            setPlan(
+                foundPlan as {
+                    plan: "";
+                    description: "";
+                    cost: 0;
+                    button_text: "";
+                    advantages: [{ advantage: "" }];
+                }
+            );
+        }
+    }, [pricingPlans, plan_name]);
+
+    if (isError) return <div>Error...</div>;
+
+    if (isLoading) return <LoadingData />;
 
     let bgPlan = "";
 
-    switch (plan) {
+    switch (plan_name.toLowerCase()) {
         case "pro":
             bgPlan = "bg-[#068c57]";
             break;
@@ -53,23 +63,20 @@ export function PlanCard({ plan = "Free Trial" }: PlanCardProps) {
             break;
     }
 
-    const { description, advantages, cost, buttonText } = getPlanConfig(plan);
-
     return (
-        <div className={`${bgPlan} text-white rounded-md max-w-[380px] max-h-[900px] p-6`}>
+        <div
+            className={`${bgPlan} text-white rounded-md max-w-[380px] max-h-[900px] p-6`}>
             <div className="flex flex-col">
                 <h1 className="text-[18px] font-semibold">
-                    {toTitleCase(plan)}
+                    {toTitleCase(plan.plan)}
                 </h1>
-                <span className="font-medium">
-                    {description}
-                </span>
+                <span className="font-medium">{plan.description}</span>
             </div>
 
-            <p className="pt-2 text-[22px] font-bold">${cost}/mon</p>
+            <p className="pt-2 text-[22px] font-bold">${plan.cost}/mon</p>
 
             <ul className="flex flex-col pt-2 gap-1">
-                {advantages?.map((item, index) => (
+                {plan.advantages?.map((item, index) => (
                     <li key={index} className="flex gap-1">
                         <span className="font-medium">{item.advantage}</span>
                     </li>
@@ -82,7 +89,7 @@ export function PlanCard({ plan = "Free Trial" }: PlanCardProps) {
                         radius="sm"
                         size="lg"
                         className="w-[200px] text-[#624bee] bg-[#ffffff] font-semibold lg:hover:scale-105">
-                        {buttonText}
+                        {plan.button_text}
                     </Button>
                 </Link>
             </div>

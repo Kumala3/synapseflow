@@ -14,15 +14,19 @@ export function useFaqQuestion() {
                 `${process.env.NEXT_PUBLIC_BASE_API_URL}/faq-question/`,
                 { email, question }
             );
-
-            setIsSuccess(response.status === 201);
+            if (response.status === 201) {
+                setIsSuccess(true);
+                setError({ error_messages: {} });
+            }
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 const backendErrors = error.response.data;
                 setError(backendErrors);
             } else {
                 setError({
-                    error_messages: { question: "An unexpected error occurred" },
+                    error_messages: {
+                        question: "An unexpected error occurred",
+                    },
                 });
             }
             setIsSuccess(false);

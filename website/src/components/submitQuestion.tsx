@@ -4,17 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Input, Textarea } from "@nextui-org/react";
 import { SubmissionConfirmationPopup } from "./SubmissionConfirmationPopup";
 import { useFaqQuestion } from "@/hooks/useFaqQuestion";
-
-interface FormState {
-    email: string;
-    question: string;
-}
-
-interface FormErrors {
-    email?: string;
-    question?: string;
-    [key: string]: string | undefined;
-}
+import { FormState, FormErrors } from "@/types/FaqQuestion";
 
 export default function SubmitQuestion() {
     const [form, setForm] = useState<FormState>({ email: "", question: "" });
@@ -29,12 +19,31 @@ export default function SubmitQuestion() {
             setForm({ email: "", question: "" });
         }
 
+        setErrors({});
+
         setTimeout(() => {
             setShowPopup(false);
         }, 5500);
     }, [isSuccess]);
 
-    if (error) <div>There was an error during sending a post request</div>;
+    useEffect(() => {
+        let newErrors: FormErrors = {};
+
+        if (error?.error_messages?.email) {
+            newErrors.email =
+                "Please enter a valid email address";
+        }
+
+        if (error?.error_messages?.question) {
+            newErrors.question =
+                "Question should no less than 50 characters and no more than 800 characters";
+        }
+
+        // This will set any new errors as soon as the `error` state updates
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
+        }
+    }, [error]);
 
     const validateEmail = (email: string) => {
         // Check if the email is valid
@@ -78,16 +87,17 @@ export default function SubmitQuestion() {
         // Validate entered email
         if (!form.email) {
             newErrors.email =
-                "Please enter an email address; it cannot be empty.";
+                "Please enter an email address; it cannot be empty";
         } else if (!validateEmail(form.email)) {
-            newErrors.email = "Please enter a valid email address.";
+            newErrors.email = "Please enter a valid email address";
         }
 
         // Validate if question is empty
         if (!form.question) {
-            newErrors.question = "Please write a question before submitting.";
-        } else if (form.question.length > 800) {
-            newErrors.question = "Question should not exceed 800 characters.";
+            newErrors.question = "Please write a question before submitting";
+        } else if (form.question.length > 800 || form.question.length < 50) {
+            newErrors.question =
+                "Question should no less than 50 characters and no more than 800 characters";
         }
 
         // Update error state

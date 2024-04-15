@@ -1,9 +1,9 @@
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 import { useState } from "react";
-import { FaqQuestionProps } from "@/types/FaqQuestion";
+import { FaqQuestionProps, BackendErrors } from "@/types/FaqQuestion";
 
 export function useFaqQuestion() {
-    const [error, setError] = useState<AxiosError | null >(null);
+    const [error, setError] = useState<BackendErrors | null>(null);
     const [isLoading, setLoading] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
 
@@ -16,12 +16,14 @@ export function useFaqQuestion() {
             );
 
             setIsSuccess(response.status === 201);
-            setError(null); // Reset any errors from previous requests
         } catch (error) {
-            if (axios.isAxiosError(error)) {
-                setError(error);
+            if (axios.isAxiosError(error) && error.response) {
+                const backendErrors = error.response.data;
+                setError(backendErrors);
             } else {
-                console.log(`Unexpected error: ${error}`);
+                setError({
+                    error_messages: { question: "An unexpected error occurred" },
+                });
             }
             setIsSuccess(false);
         } finally {

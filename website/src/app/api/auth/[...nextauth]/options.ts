@@ -2,6 +2,12 @@ import type { NextAuthOptions } from "next-auth";
 import GitHubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
 
+interface User {
+    id: string;
+    username: string;
+    password: string;
+}
+
 export const options: NextAuthOptions = {
     providers: [
         GitHubProvider({
@@ -21,7 +27,9 @@ export const options: NextAuthOptions = {
                     type: "password",
                 },
             },
-            async authorize(credentials, req) {
+            async authorize(
+                credentials: Record<"username" | "password", string> | undefined,
+            ): Promise<User | null> {
                 // Docs: https://next-auth.js.org/configuration/providers/credentials
                 // You need to provide your own logic here that takes the credentials
                 // submitted and returns either a object representing a user or value
@@ -42,13 +50,20 @@ export const options: NextAuthOptions = {
                 //     return user;
                 // }
 
-                const user = { id: 21423, username: "Kiids", password: "gthyers5vhtrsz$2ctbd"};
+                const user = {
+                    id: "654743532",
+                    username: "Kiids",
+                    password: "gthyers5vhtrsz$2ctbd",
+                };
 
-                if (credentials?.username === user.username && credentials?.password === user.password) {
+                if (
+                    credentials?.username === user.username &&
+                    credentials?.password === user.password
+                ) {
                     // Return the user object if the credentials are valid
                     return user;
-                } else {     
-                    // Return null if user data could not be retrieved           // Return null if user data could not be retrieved
+                } else {
+                    // Return null if user data could not be retrieved
                     return null;
                 }
             },

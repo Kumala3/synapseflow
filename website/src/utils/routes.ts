@@ -10,7 +10,7 @@ export const ROUTES = {
     TEST_AI: "/test-ai",
     ABOUT: "/about",
     CONTACT: "/contact",
-    SIGN_IN: "/signin",
+    SIGN_IN: "/api/auth/signin/",
     SALES: "/sales",
     PRIVACY: "/privacy",
     TERMS: "/terms",

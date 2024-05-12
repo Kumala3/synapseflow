@@ -1,6 +1,6 @@
 import Plans from "@/components/Plans";
 
-export default function Pricing() {
+export default async function Pricing() {
     return (
         <div className="">
             <Plans />

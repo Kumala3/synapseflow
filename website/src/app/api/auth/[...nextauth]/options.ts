@@ -28,7 +28,7 @@ export const options: NextAuthOptions = {
                 },
             },
             async authorize(
-                credentials: Record<"username" | "password", string> | undefined,
+                credentials: Record<"username" | "password", string> | undefined
             ): Promise<User | null> {
                 // Docs: https://next-auth.js.org/configuration/providers/credentials
                 // You need to provide your own logic here that takes the credentials

@@ -4,7 +4,7 @@ import { Input, Button } from "@nextui-org/react";
 
 export default function CredentialsLoginForm() {
     return (
-        <main className="p-[100px] bg-[#1f1f1f] flex flex-col justify-center items-center">
+        <main className="p-[100px] flex flex-col justify-center items-center">
             <div className="flex flex-col gap-4 w-[380px] bg-[#0d1117] p-4 rounded shadow-lg">
                 <Input
                     className=""

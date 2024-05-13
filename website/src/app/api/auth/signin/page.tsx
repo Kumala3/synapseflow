@@ -1,10 +1,9 @@
-import SignInForm from "@/components/SignIn/SignInForm";
+import CredentialsLoginForm from "@/components/SignIn/CredentialsLoginForm";
 
 export default async function SignIn() {
     return (
         <main>
-            Sign in to your Account
-            <SignInForm />
+            <CredentialsLoginForm />
         </main>
     );
 }

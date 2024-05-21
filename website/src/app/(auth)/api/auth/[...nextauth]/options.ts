@@ -70,5 +70,7 @@ export const options: NextAuthOptions = {
         }),
     ],
     // Read more about custom pages here: https://next-auth.js.org/configuration/options
-    // pages: {}
+    pages: {
+        signIn: "/auth/signin",
+    }
 };

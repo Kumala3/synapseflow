@@ -1,5 +1,5 @@
 import { getServerSession } from "next-auth";
-import { options } from "../api/auth/[...nextauth]/options";
+import { options } from "@/app/(auth)/api/auth/[...nextauth]/options";
 import { redirect } from "next/navigation";
 
 export default async function Resources() {

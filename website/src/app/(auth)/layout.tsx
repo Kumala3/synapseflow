@@ -8,7 +8,6 @@ export default function ApiLayout({
 }: Readonly<{ children: React.ReactNode }>) {
     return (
         <Providers>
-            <h1>Api Layout for Auth Pages</h1>
             {children}
             <Analytics />
             <SpeedInsights />

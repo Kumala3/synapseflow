@@ -5,3 +5,13 @@
 .theme-transition {
     @apply transition-colors transition-background duration-1000;
 }
+
+.honk-brand {
+  font-family: "Honk", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-variation-settings:
+    "MORF" 0,
+    "SHLN" 50;
+}

@@ -23,6 +23,7 @@ const config: Config = {
       },
       fontFamily: {
         tilt: ["Rubik Mono One", "monospace"],
+        honk: ["Honk", "system-ui"],
       },
       animation: {
         "infinite-scroll-left":

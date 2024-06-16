@@ -14,9 +14,9 @@ interface FormState {
 }
 
 interface FormErrors {
-    email?: string;
-    password?: string;
-    confirmationPassword?: string;
+    email: string;
+    password: string;
+    confirmationPassword: string;
     [key: string]: string;
 }
 
@@ -26,7 +26,11 @@ export default function SignUpLoginForm() {
         password: "",
         confirmationPassword: "",
     });
-    const [errors, setErrors] = useState<FormErrors>({});
+    const [errors, setErrors] = useState<FormErrors>({ 
+        email: "", 
+        password: "", 
+        confirmationPassword: "" 
+    });
 
     const pathName = usePathname();
     const logInPath = pathName.replace(/signup$/, "signin");
@@ -38,7 +42,7 @@ export default function SignUpLoginForm() {
 
         // Clear errors for that field when the user starts typing
         if (errors[name]) {
-            setErrors(prevErrors => ({ ...prevErrors, [name]: undefined }));
+            setErrors(prevErrors => ({ ...prevErrors, [name]: "" }));
         }
     };
 

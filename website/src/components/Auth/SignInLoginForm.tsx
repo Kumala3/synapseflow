@@ -43,7 +43,7 @@ export default function SignInLoginForm() {
                         Forgot password?
                     </Link>
                 </div>
-                <div className="flex flex-row justify-between items-center">
+                <div className="flex flex-row gap-7 items-center">
                     <div className="text-sm text-gray-600">
                         Don&apos;t have an account?
                     </div>

@@ -5,9 +5,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import PasswordIcon from "../Icons/PasswordIcon";
 import EmailIcon from "../Icons/EmailIcon";
-import UserIcon from "../Icons/UserIcon";
 
 export default function SignUpLoginForm() {
+    const pathName = usePathname();
+
+    const logInPath = pathName.replace(/signup$/, "signin");
 
     const handleRegister = () => {
         // Register user
@@ -15,17 +17,11 @@ export default function SignUpLoginForm() {
 
     return (
         <main className="justify-center flex flex-column items-center">
-            <div className="p-5 rounded-md flex flex-col gap-4 bg-[#cbcac5]">
+            <div className="p-16 rounded-md flex flex-col gap-4 bg-[#cbcac5]">
+                <h1 className="flex justify-center font-bold text-[24px]">Create your account</h1>
                 <Input
                     className=""
-                    startContent={<UserIcon width={21} height={21} />}
-                    variant="faded"
-                    type="text"
-                    placeholder="Username"
-                    label="Username"
-                />
-                <Input
-                    className=""
+                    size="lg"
                     startContent={<EmailIcon width={19} height={19} />}
                     variant="faded"
                     type="email"
@@ -34,6 +30,7 @@ export default function SignUpLoginForm() {
                 />
                 <Input
                     className=""
+                    size="lg"
                     startContent={<PasswordIcon width={19} height={19} />}
                     variant="faded"
                     type="password"
@@ -42,13 +39,20 @@ export default function SignUpLoginForm() {
                 />
                 <Input
                     className=""
+                    size="lg"
                     startContent={<PasswordIcon width={19} height={19} />}
                     variant="faded"
                     type="password"
                     placeholder="Confirm Password"
                     label="Password"
                 />
-                <Button onClick={handleRegister}>Register</Button>
+                <Button size="lg" onClick={handleRegister}>Register</Button>
+                <div className="flex flex-row gap-3">
+                    Already have an account?
+                    <Link href={logInPath} className="text-blue-500 hover:underline">
+                        Log in
+                    </Link>
+                </div>
             </div>
         </main>
     );

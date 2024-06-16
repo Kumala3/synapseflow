@@ -5,3 +5,4 @@
 .theme-transition {
     @apply transition-colors transition-background duration-1000;
 }
+

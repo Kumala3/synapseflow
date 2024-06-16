@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -H 0.0.0.0 -p 3000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -14,7 +14,7 @@
     "@vercel/speed-insights": "^1.0.10",
     "axios": "^1.6.8",
     "framer-motion": "^11.0.20",
-    "next": "^14.2.3",
+    "next": "^14.2.4",
     "next-auth": "^4.24.7",
     "next-themes": "^0.3.0",
     "react": "^18",

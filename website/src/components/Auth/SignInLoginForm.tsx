@@ -12,8 +12,8 @@ export default function SignInLoginForm() {
     const SignUpPath = pathName.replace(/signin$/, "signup");
 
     return (
-        <main className="p-5 flex flex-column items-center">
-            <div className="flex flex-col gap-4 p-[44px] bg-[#afb3b8] w-[550px] h-[380px] rounded-md shadow-lg">
+        <main className="flex flex-column">
+            <div className="flex flex-col gap-4 p-8 rounded-md shadow-xl">
                 <Input
                     startContent={<EmailIcon width={19} height={19} />}
                     className=""
@@ -27,13 +27,15 @@ export default function SignInLoginForm() {
                     className=""
                     variant="faded"
                     type="password"
-                    placeholder="(min. 8 characters)"
+                    placeholder="Password"
                     label="Password"
                 />
                 <Button
                     className="mt-1 font-semibold text-[18px]"
                     size="md"
-                    type="submit">
+                    type="submit"
+                    color="primary"
+                >
                     Login
                 </Button>
                 <div className="flex flex-row justify-center items-center">

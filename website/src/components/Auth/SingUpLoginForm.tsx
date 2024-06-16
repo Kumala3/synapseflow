@@ -110,67 +110,65 @@ export default function SignUpLoginForm() {
     };
 
     return (
-        <main className="justify-center flex flex-column">
-            <div className="rounded-md flex flex-col gap-4">
-                <h1 className="flex justify-center font-bold text-[24px]">
-                    Create your account
-                </h1>
-                <Input
-                    className=""
-                    name="email"
-                    size="lg"
-                    startContent={<EmailIcon width={19} height={19} />}
-                    variant="faded"
-                    type="email"
-                    placeholder="Email"
-                    label="Email"
-                    value={form.email}
-                    onChange={handleChange}
-                    onClear={() => handleClear("email")}
-                    errorMessage={errors.email}
-                    isRequired={true}
-                />
-                <Input
-                    className=""
-                    name="password"
-                    size="lg"
-                    startContent={<PasswordIcon width={19} height={19} />}
-                    variant="faded"
-                    type="password"
-                    placeholder="Password"
-                    label="Password"
-                    value={form.password}
-                    onChange={handleChange}
-                    onClear={() => handleClear("password")}
-                    errorMessage={errors.password}
-                    isRequired={true}
-                />
-                <Input
-                    className=""
-                    name="confirmationPassword"
-                    size="lg"
-                    startContent={<PasswordIcon width={19} height={19} />}
-                    variant="faded"
-                    type="password"
-                    placeholder="Confirm Password"
-                    label="Password"
-                    value={form.confirmationPassword}
-                    onChange={handleChange}
-                    onClear={() => handleClear("confirmationPassword")}
-                    errorMessage={errors.confirmationPassword}
-                    isRequired={true}
-                />
-                <Button size="lg" onClick={handleRegister}>
-                    Register
-                </Button>
-                <div className="flex flex-row gap-3">
-                    Already have an account?
-                    <Link
-                        href={logInPath}
-                        className="text-blue-500 hover:underline">
-                        Log in
-                    </Link>
-                </div>
+        <main className="rounded-md flex flex-col gap-4 p-8 shadow-xl">
+            <h1 className="flex justify-center font-bold text-[24px]">
+                Create your account
+            </h1>
+            <Input
+                className=""
+                name="email"
+                size="lg"
+                startContent={<EmailIcon width={19} height={19} />}
+                variant="faded"
+                type="email"
+                placeholder="Email"
+                label="Email"
+                value={form.email}
+                onChange={handleChange}
+                onClear={() => handleClear("email")}
+                errorMessage={errors.email}
+                isRequired={true}
+            />
+            <Input
+                className=""
+                name="password"
+                size="lg"
+                startContent={<PasswordIcon width={19} height={19} />}
+                variant="faded"
+                type="password"
+                placeholder="Password"
+                label="Password"
+                value={form.password}
+                onChange={handleChange}
+                onClear={() => handleClear("password")}
+                errorMessage={errors.password}
+                isRequired={true}
+            />
+            <Input
+                className=""
+                name="confirmationPassword"
+                size="lg"
+                startContent={<PasswordIcon width={19} height={19} />}
+                variant="faded"
+                type="password"
+                placeholder="Confirm Password"
+                label="Password"
+                value={form.confirmationPassword}
+                onChange={handleChange}
+                onClear={() => handleClear("confirmationPassword")}
+                errorMessage={errors.confirmationPassword}
+                isRequired={true}
+            />
+            <Button size="lg" onClick={handleRegister} color="primary">
+                Register
+            </Button>
+            <div className="flex flex-row gap-3">
+                Already have an account?
+                <Link
+                    href={logInPath}
+                    className="text-blue-500 hover:underline">
+                    Log in
+                </Link>
             </div>
         </main>
     );

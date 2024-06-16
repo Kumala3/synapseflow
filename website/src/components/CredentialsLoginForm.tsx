@@ -2,14 +2,14 @@
 
 import { Input, Button } from "@nextui-org/react";
 import Link from "next/link";
-import PasswordIcon from "../Icons/PasswordIcon";
-import EmailIcon from "../Icons/EmailIcon";
+import PasswordIcon from "./Icons/PasswordIcon";
+import EmailIcon from "./Icons/EmailIcon";
 import { usePathname } from "next/navigation";
 
 export default function CredentialsLoginForm() {
     const pathName = usePathname();
-    const resetPasswordPath = pathName.replace(/signin$/, "/forgot-password/");
-    const SignUpPath = pathName.replace(/signin$/, "/signup/");
+    const resetPasswordPath = pathName.replace(/signin$/, "forgot-password");
+    const SignUpPath = pathName.replace(/signin$/, "signup");
 
     return (
         <main className="p-5 flex flex-column items-center">

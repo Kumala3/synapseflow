@@ -1,4 +1,4 @@
-import CredentialsLoginForm from "@/components/SignIn/CredentialsLoginForm";
+import CredentialsLoginForm from "@/components/CredentialsLoginForm";
 import BrandImage from "@public/candeel.webp";
 import Image from "next/image";
 import Link from "next/link";

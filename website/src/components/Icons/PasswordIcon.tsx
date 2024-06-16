@@ -1,4 +1,5 @@
-import PasswordSvg from "@public/icons/password.svg";
+import PasswordLight from "@public/icons/password-light.svg";
+import PasswordDark from "@public/icons/password-dark.svg";
 import Image from "next/image";
 
 interface PasswordIconProps {
@@ -8,6 +9,9 @@ interface PasswordIconProps {
 
 export default function PasswordIcon({width, height}: PasswordIconProps) {
     return (
-        <Image src={PasswordSvg} alt="password-icon" width={width} height={height} />
+        <div>
+            <Image src={PasswordLight} alt="Password Icon" width={width} height={height} className="hidden dark:flex" />
+            <Image src={PasswordDark} alt="Password Icon" width={width} height={height} className="flex dark:hidden" />
+        </div>
     );
 }

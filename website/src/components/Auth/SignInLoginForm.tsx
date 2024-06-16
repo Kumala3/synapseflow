@@ -20,7 +20,7 @@ interface FormErrors {
 
 export default function SignInLoginForm() {
     const [form, setForm] = useState<FormProps>({email: "", password: ""});
-    const [errors, setErrors] = useState<FormErrors>({});
+    const [errors, setErrors] = useState<FormErrors>({email: "", password: ""});
 
     const pathName = usePathname();
     const resetPasswordPath = pathName.replace(/signin$/, "forgot-password");

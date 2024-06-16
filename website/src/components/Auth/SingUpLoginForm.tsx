@@ -17,6 +17,7 @@ interface FormErrors {
     email?: string;
     password?: string;
     confirmationPassword?: string;
+    [key: string]: string;
 }
 
 export default function SignUpLoginForm() {
@@ -53,7 +54,7 @@ export default function SignUpLoginForm() {
     };
 
     // Check if password is meets the requirements
-    const validatePasswordLength = (password: string) => {
+    const validatePassword = (password: string) => {
         if (password.length < 8) {
             return false;
         }
@@ -71,41 +72,23 @@ export default function SignUpLoginForm() {
     const handleRegister = async () => {
         // Validates the email
         if (!form.email) {
-            setErrors(prevErrors => ({
-                ...prevErrors,
-                email: "Please enter your email address",
-            }));
+            setErrors(prevErrors => ({ ...prevErrors, email: "Please enter your email address" }));
         } else if (!validateEmail(form.email)) {
-            setErrors(prevErrors => ({
-                ...prevErrors,
-                email: "Please enter a valid email address",
-            }));
+            setErrors(prevErrors => ({ ...prevErrors, email: "Please enter a valid email address" }));
         }
 
         // Validates the password
         if (!form.password) {
-            setErrors(prevErrors => ({
-                ...prevErrors,
-                password: "Please enter a password",
-            }));
-        } else if (!validatePasswordLength(form.password)) {
-            setErrors(prevErrors => ({
-                ...prevErrors,
-                password: "Password must be at least 8 characters long",
-            }));
+            setErrors(prevErrors => ({ ...prevErrors, password: "Please enter a password" }));
+        } else if (!validatePassword(form.password)) {
+            setErrors(prevErrors => ({ ...prevErrors, password: "Password must be at least 8 characters long" }));
         }
 
         // Validates the confirmation password
         if (!form.confirmationPassword) {
-            setErrors(prevErrors => ({
-                ...prevErrors,
-                confirmationPassword: "Please confirm the password",
-            }));
+            setErrors(prevErrors => ({ ...prevErrors, confirmationPassword: "Please confirm the password" }));
         } else if (!validatePasswordsAccuracy(form.password, form.confirmationPassword)) {
-            setErrors(prevErrors => ({
-                ...prevErrors,
-                confirmationPassword: "Passwords do not match",
-            }));
+            setErrors(prevErrors => ({ ...prevErrors, confirmationPassword: "Passwords do not match" }));
         }
     };
 

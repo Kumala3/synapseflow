@@ -1,40 +1,87 @@
 "use client";
 
+import React, { useState } from "react";
 import { Input, Button } from "@nextui-org/react";
 import Link from "next/link";
 import PasswordIcon from "../Icons/PasswordIcon";
 import EmailIcon from "../Icons/EmailIcon";
 import { usePathname } from "next/navigation";
 
+interface FormProps {
+    email: string;
+    password: string;
+}
+
+interface FormErrors {
+    email: string;
+    password: string;
+    [key: string]: string;
+}
+
 export default function SignInLoginForm() {
+    const [form, setForm] = useState<FormProps>({email: "", password: ""});
+    const [errors, setErrors] = useState<FormErrors>({});
+
     const pathName = usePathname();
     const resetPasswordPath = pathName.replace(/signin$/, "forgot-password");
     const SignUpPath = pathName.replace(/signin$/, "signup");
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = event.target;
+        // Update the form state to reflect the new value from the input
+        setForm(prevForm => ({ ...prevForm, [name]: value }));
+
+        // If user starts typing clear the error of a specific input
+        if (errors[name]) {
+            setErrors(prevErrors => ({ ...prevErrors, [name]: "" }));
+        }
+    };
+
+    const handleLogin = () => {
+        // Validates the email
+        if (!form.email) {
+            setErrors(prevErrors => ({ ...prevErrors, email: "Please enter an email"}));
+        }
+
+        // Validates the password
+        if (!form.password) {
+            setErrors(prevErrors => ({ ...prevErrors, password: "Please enter a password" }));
+        }
+    };
 
     return (
         <main className="flex flex-column">
             <div className="flex flex-col gap-4 p-8 rounded-md shadow-xl">
                 <Input
+                    name="email"
                     startContent={<EmailIcon width={19} height={19} />}
                     className=""
                     variant="faded"
                     type="email"
                     placeholder="email32@gmail.com"
                     label="Email"
+                    value={form.email}
+                    onChange={handleChange}
+                    errorMessage={errors.email}
                 />
                 <Input
+                    name="password"
                     startContent={<PasswordIcon width={19} height={19} />}
                     className=""
                     variant="faded"
                     type="password"
                     placeholder="Password"
                     label="Password"
+                    value={form.password}
+                    onChange={handleChange}
+                    errorMessage={errors.password}
                 />
                 <Button
-                    className="mt-1 font-semibold text-[18px]"
+                    className=""
                     size="md"
                     type="submit"
                     color="primary"
+                    onClick={handleLogin}
                 >
                     Login
                 </Button>
